@@ -29,7 +29,7 @@
   ],
   "name":"sGolemAttack",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Desert Enemy",
     "path":"folders/Sprites/Enemy/Desert Enemy.yy",
@@ -102,7 +102,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":34,
-    "yorigin":37,
+    "yorigin":40,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

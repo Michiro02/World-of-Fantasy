@@ -30,56 +30,6 @@ global.actionLibrary =
 		}		
 	}
 	,
-	FireBall:
-	{
-		name: "Fire Ball",
-		description : "{0} casts Fire Ball!",
-		subMenu : "Magic",
-		mpCost : 250,
-		targetRequired: true,
-		targetEnemyByDefault: true,
-		targetAll: MODE.VARIES,
-		userAnimation : "cast",
-		effectSprite: sFireBall,
-		effectSpriteNoTarget: sAttackFireVortex,
-		effectOnTarget: MODE.ALWAYS,
-		effectSound: snd_Fireball,
-		func : function(_user, _targets)
-		{
-			for (var i = 0; i < array_length(_targets); i++)
-			{
-				 
-            var _damage = irandom_range(900, 1100);
-
-            // Add scaling based on magic stat
-            var magicScale = _user.magic * 0.4;  // Adjust scaling factor as needed
-            _damage += magicScale;
-				// Check if the target has a weakness to fire
-            if (array_contains(_targets[i].weaknesses, "Fire"))
-            {
-                _damage = ceil(_damage * 2.5); 
-            }
-			
-			// Check if the target has resistance to fire
-            if (array_contains(_targets[i].resistances, "Fire"))
-            {
-                _damage = ceil(_damage * 0.5); // Reduce damage 
-            }
-			 // Check if the target absorbs fire (healing instead of damage)
-            if (array_contains(_targets[i].absorbs, "Fire"))
-            {
-                var _heal = ceil(_damage); 
-                BattleChangeHP(_targets[i], _heal,0,"Fire"); 
-                
-              
-                continue; 
-            }
-				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
-				BattleChangeHP(_targets[i], -_damage,0,"Fire");
-			}
-			BattleChangeMP(_user, -mpCost)
-		}		
-	},
 	attackSlash :
 	{
 		name : "Attack",
@@ -1258,12 +1208,62 @@ escape :
 			BattleChangeMP(_user, -mpCost)
 		}		
 	},
+	FireBall:
+	{
+		name: "Fireball",
+		description : "{0} casts Fireball!",
+		subMenu : "Magic",
+		mpCost : 160,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.VARIES,
+		userAnimation : "cast",
+		effectSprite: sAttackFireBall,
+		effectSpriteNoTarget: sAttackFireBall,
+		effectOnTarget: MODE.ALWAYS,
+		effectSound: snd_Fireball,
+		func : function(_user, _targets)
+		{
+			for (var i = 0; i < array_length(_targets); i++)
+			{
+				 
+            var _damage = irandom_range(600, 750);
+
+            // Add scaling based on magic stat
+            var magicScale = _user.magic * 0.7;  // Adjust scaling factor as needed
+            _damage += magicScale;
+				// Check if the target has a weakness to fire
+            if (array_contains(_targets[i].weaknesses, "Fire"))
+            {
+                _damage = ceil(_damage * 2.5); 
+            }
+			
+			// Check if the target has resistance to fire
+            if (array_contains(_targets[i].resistances, "Fire"))
+            {
+                _damage = ceil(_damage * 0.5); // Reduce damage 
+            }
+			 // Check if the target absorbs fire (healing instead of damage)
+            if (array_contains(_targets[i].absorbs, "Fire"))
+            {
+                var _heal = ceil(_damage); 
+                BattleChangeHP(_targets[i], _heal,0,"Fire"); 
+                
+              
+                continue; 
+            }
+				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+				BattleChangeHP(_targets[i], -_damage,0,"Fire");
+			}
+			BattleChangeMP(_user, -mpCost)
+		}		
+	},
 	firaga: 
 {
     name: "Firaga",
     description: "{0} casts Firaga!",
     subMenu: "Magic",
-    mpCost: 154,
+    mpCost: 204,
     targetEnemyByDefault: true, //0: party/self, 1: enemy
     targetRequired: true,
     targetAll: MODE.VARIES,
@@ -1310,108 +1310,7 @@ escape :
         BattleChangeMP(_user, -mpCost);
     }
 },
-Assess:
-{
-	name: "Assess",
-    description: "{0} uses Assess!",
-    subMenu: "Magic",
-    mpCost: 100,
-    targetEnemyByDefault: true, 
-    targetRequired: true,
-    targetAll: MODE.NEVER, // Only 1 target at a time
-    userAnimation: "cast",
-    effectSprite: sAssess, // Custom animation if needed
-    effectOnTarget: MODE.ALWAYS,
-	effectSound: snd_Assess,
-    func: function(_user, _targets)
-    {
-        for (var i = 0; i < array_length(_targets); i++)
-        {
-            var _target = _targets[i];
-            
-            // Store assessed info to be drawn in oBattle
-            global.assessInfo = {
-               name: _target.name,
-			    hp: _target.hp,
-			    hpMax: _target.hpMax,
-			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
-			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
-			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
-			    sprite: _target.sprite_index
-            };
-			 global.assessViewing = true;  
-        }
-        BattleChangeMP(_user, -mpCost);
-    }
-},
-Assess2:
-{
-	name: "Assess",
-    description: "{0} uses Assess!",
-    subMenu: "Skill",
-    mpCost: 100,
-    targetEnemyByDefault: true,
-    targetRequired: true,
-    targetAll: MODE.NEVER, // Only 1 target at a time
-    userAnimation: "cast",
-    effectSprite: sAssess, // Custom animation if needed
-    effectOnTarget: MODE.ALWAYS,
-	effectSound: snd_Assess,
-    func: function(_user, _targets)
-    {
-        for (var i = 0; i < array_length(_targets); i++)
-        {
-            var _target = _targets[i];
-            
-            // Store assessed info to be drawn in oBattle
-            global.assessInfo = {
-               name: _target.name,
-			    hp: _target.hp,
-			    hpMax: _target.hpMax,
-			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
-			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
-			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
-			    sprite: _target.sprite_index
-            };
-			 global.assessViewing = true;  
-        }
-        BattleChangeMP(_user, -mpCost);
-    }
-},
-Assess3:
-{
-	name: "Assess",
-    description: "{0} uses Assess!",
-    subMenu: "Black Magic",
-    mpCost: 100,
-    targetEnemyByDefault: true,
-    targetRequired: true,
-    targetAll: MODE.NEVER, // Only 1 target at a time
-    userAnimation: "cast",
-    effectSprite: sAssess, // Custom animation if needed
-    effectOnTarget: MODE.ALWAYS,
-	effectSound: snd_Assess,
-    func: function(_user, _targets)
-    {
-        for (var i = 0; i < array_length(_targets); i++)
-        {
-            var _target = _targets[i];
-            
-            // Store assessed info to be drawn in oBattle
-            global.assessInfo = {
-               name: _target.name,
-			    hp: _target.hp,
-			    hpMax: _target.hpMax,
-			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
-			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
-			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
-			    sprite: _target.sprite_index
-            };
-			 global.assessViewing = true;  
-        }
-        BattleChangeMP(_user, -mpCost);
-    }
-},
+
 FireVortex: 
 {
     name: "Fire Vortex",
@@ -1513,6 +1412,108 @@ FireVortex:
 				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
 				BattleChangeHP(_targets[i], -_damage,0,"Fire");
 			}
+        BattleChangeMP(_user, -mpCost);
+    }
+},
+Assess:
+{
+	name: "Assess",
+    description: "{0} uses Assess!",
+    subMenu: "Magic",
+    mpCost: 100,
+    targetEnemyByDefault: true, 
+    targetRequired: true,
+    targetAll: MODE.NEVER, // Only 1 target at a time
+    userAnimation: "cast",
+    effectSprite: sAssess, 
+    effectOnTarget: MODE.ALWAYS,
+	effectSound: snd_Assess,
+    func: function(_user, _targets)
+    {
+        for (var i = 0; i < array_length(_targets); i++)
+        {
+            var _target = _targets[i];
+            
+            // Store assessed info to be drawn in oBattle
+            global.assessInfo = {
+               name: _target.name,
+			    hp: _target.hp,
+			    hpMax: _target.hpMax,
+			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
+			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
+			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
+			    sprite: _target.sprite_index
+            };
+			 global.assessViewing = true;  
+        }
+        BattleChangeMP(_user, -mpCost);
+    }
+},
+Assess2:
+{
+	name: "Assess",
+    description: "{0} uses Assess!",
+    subMenu: "Skill",
+    mpCost: 100,
+    targetEnemyByDefault: true,
+    targetRequired: true,
+    targetAll: MODE.NEVER, // Only 1 target at a time
+    userAnimation: "cast",
+    effectSprite: sAssess, // Custom animation if needed
+    effectOnTarget: MODE.ALWAYS,
+	effectSound: snd_Assess,
+    func: function(_user, _targets)
+    {
+        for (var i = 0; i < array_length(_targets); i++)
+        {
+            var _target = _targets[i];
+            
+            // Store assessed info to be drawn in oBattle
+            global.assessInfo = {
+               name: _target.name,
+			    hp: _target.hp,
+			    hpMax: _target.hpMax,
+			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
+			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
+			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
+			    sprite: _target.sprite_index
+            };
+			 global.assessViewing = true;  
+        }
+        BattleChangeMP(_user, -mpCost);
+    }
+},
+Assess3:
+{
+	name: "Assess",
+    description: "{0} uses Assess!",
+    subMenu: "Black Magic",
+    mpCost: 100,
+    targetEnemyByDefault: true,
+    targetRequired: true,
+    targetAll: MODE.NEVER, // Only 1 target at a time
+    userAnimation: "cast",
+    effectSprite: sAssess, // Custom animation if needed
+    effectOnTarget: MODE.ALWAYS,
+	effectSound: snd_Assess,
+    func: function(_user, _targets)
+    {
+        for (var i = 0; i < array_length(_targets); i++)
+        {
+            var _target = _targets[i];
+            
+            // Store assessed info to be drawn in oBattle
+            global.assessInfo = {
+               name: _target.name,
+			    hp: _target.hp,
+			    hpMax: _target.hpMax,
+			    weaknesses: array_filter(_target.weaknesses, function(val) { return val != "" && val != " "; }), 
+			    absorbs: array_filter(_target.absorbs, function(val) { return val != "" && val != " "; }), 
+			    resistances: array_filter(_target.resistances, function(val) { return val != "" && val != " "; }), 
+			    sprite: _target.sprite_index
+            };
+			 global.assessViewing = true;  
+        }
         BattleChangeMP(_user, -mpCost);
     }
 },

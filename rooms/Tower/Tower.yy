@@ -26,7 +26,6 @@
     {"name":"inst_76F50152","path":"rooms/Tower/Tower.yy",},
     {"name":"inst_479CEBB6","path":"rooms/Tower/Tower.yy",},
     {"name":"inst_1F213CEB","path":"rooms/Tower/Tower.yy",},
-    {"name":"inst_DB87EFC","path":"rooms/Tower/Tower.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -53,7 +52,6 @@
         {"$GMRInstance":"v2","%Name":"inst_479CEBB6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_479CEBB6","objectId":{"name":"oIronGiant","path":"objects/oIronGiant/oIronGiant.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.8,"scaleY":0.8,"x":384.0,"y":96.0,},
         {"$GMRInstance":"v2","%Name":"inst_1F213CEB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1F213CEB","objectId":{"name":"oIronGiant","path":"objects/oIronGiant/oIronGiant.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.8,"scaleY":0.8,"x":384.0,"y":192.0,},
         {"$GMRInstance":"v2","%Name":"inst_53C1555","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_53C1555","objectId":{"name":"oCerberus","path":"objects/oCerberus/oCerberus.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.6,"scaleY":0.6,"x":237.0,"y":61.0,},
-        {"$GMRInstance":"v2","%Name":"inst_DB87EFC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_DB87EFC","objectId":{"name":"oEncounter","path":"objects/oEncounter/oEncounter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":0.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":27,"SerialiseWidth":32,"TileCompressedData":[
           -160,-2147483648,2,333,334,-8,-2147483648,9,822,823,824,825,823,822,823,824,825,-10,-2147483648,5,333,

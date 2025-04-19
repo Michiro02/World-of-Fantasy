@@ -140,30 +140,31 @@ character.mpMax = character.baseMpMax + (character.equippedWeapon != undefined ?
                 }
 				if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.FireBall)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.FireBall;
-                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Fire Ball!";
-					array_push(global.lastLearnedSkills, character.name + " learned Fire Ball");
+                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Fireball!";
+					array_push(global.lastLearnedSkills, character.name + " learned Fireball");
                 }
-                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.firaga)) {
-                    character.actions[array_length(character.actions)] = global.actionLibrary.firaga;
-                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Firaga!";
-					array_push(global.lastLearnedSkills, character.name + " learned Firaga");
-                }
+             
                 if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.curaga)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.curaga;
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Cure!";
 					array_push(global.lastLearnedSkills, character.name + " learned Cure");
                 }
-                if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.ice3)) {
+				if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.firaga)) {
+                    character.actions[array_length(character.actions)] = global.actionLibrary.firaga;
+                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Firaga!";
+					array_push(global.lastLearnedSkills, character.name + " learned Firaga");
+                }
+                if (character.level == 90 && !array_contains(character.actions, global.actionLibrary.ice3)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.ice3;
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice 3!";
 					array_push(global.lastLearnedSkills, character.name + " learned Ice 3");
                 }
-                if (character.level == 90 && !array_contains(character.actions, global.actionLibrary.FireVortex)) {
+                if (character.level == 95 && !array_contains(character.actions, global.actionLibrary.FireVortex)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.FireVortex;
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Fire Vortex!";
 					array_push(global.lastLearnedSkills, character.name + " learned Fire Vortex");
                 }
-                if (character.level == 95 && !array_contains(character.actions, global.actionLibrary.HolyStrike)) {
+                if (character.level == 100 && !array_contains(character.actions, global.actionLibrary.HolyStrike)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.HolyStrike;
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Holy Strike!";
 					array_push(global.lastLearnedSkills, character.name + " learned Holy Strike!");

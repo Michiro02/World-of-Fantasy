@@ -216,15 +216,6 @@ function BattleStateSelectAction()
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals heavy damage";
 					        break;
-							
-						 case "Fire Ball":
-					        var _minBase = 900;
-					        var _maxBase = 1100;
-					        var _minDamage = _minBase + ceil(_unit.magic * 0.8);
-					        var _maxDamage = _maxBase + ceil(_unit.magic * 0.8);
-					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
-							_info = "\nDeals fire damage";
-					        break;	
 
 					    case "Dragon Fury":
 					        _minBase = 900;
@@ -377,6 +368,15 @@ function BattleStateSelectAction()
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals fire damage";
 					        break;
+							
+						 case "Fireball":
+					        var _minBase = 600;
+					        var _maxBase = 750;
+					        var _minDamage = _minBase + ceil(_unit.magic * 0.7);
+					        var _maxDamage = _maxBase + ceil(_unit.magic * 0.7);
+					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
+							_info = "\nDeals fire damage";
+					        break;		
 
 					    case "Firaga":
 					        _minBase = 700;

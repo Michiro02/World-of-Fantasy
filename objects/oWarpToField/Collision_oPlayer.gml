@@ -1,20 +1,16 @@
-// Collision with oPlayer
 if (warpState == 0) {
-    // Store the room name and target coordinates
     if (room == Castle) {
         roomName = "   Field";
         targetRoom = Field;
         targetX = 222;
         targetY = 210;
-
-        // Disable player control
-        oPlayer.canMove = false;  // Stop player movement
-
-        // Switch to the loading state
-        warpState = 1;
-        loadingTimer = loadingDuration;  // Start the loading timer
-
-        // Display the loading screen (remove room name display for now)
-        instance_create_layer(0, 0, "UI", oLoadingScreen);  // Assuming oLoadingScreen is your loading screen object
+        
+        oPlayer.canMove = false;
+        
+        // Start dialogue
+        dialogue_visible = true;
+        global.dialogue_active = true;
+        dialogue_index = 0;
+        warpState = 2; // Set to waiting for dialogue state
     }
 }

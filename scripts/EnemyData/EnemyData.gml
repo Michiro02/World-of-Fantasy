@@ -45,48 +45,6 @@ global.enemies =
 	        return [_action, _target];
 	    }
 	},
-	golem: 
-	{
-		name: "Golem",
-		hp: 1100,
-		hpMax: 1100,
-		mp: 0,
-		mpMax: 0,
-		strength: 300,
-		magic: 2,
-		sprites: { idle: sGolem, attack: sGolemAttack},
-		actions: [global.actionLibrary.attack],
-		weaknesses: ["Water","True damage","Wind"],
-		resistances: ["Fire"],
-		absorbs: [" "],
-		preBattleDialogue: [],
-        midBattleDialogue: [],
-        deathDialogue: [],
-		xpValue : 2000,
-		moneyDrop: 200,
-		sound: snd_ExtraBossTheme,
-		nextEnemy: noone,
-		drops: [
-			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 30 },  // 30% chance to drop an ether
-		],
-		 AIscript : function()
-        {
-			 // Randomly select an action from the available actions
-	        var _action = actions[irandom(array_length(actions) - 1)];
-        
-	        // Filter the party members to find those who are still alive
-	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
-	            return (_unit.hp > 0);
-	        });
-
-	        // Select a random target from the filtered list of living party members
-	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
-
-	        // Return the chosen action and the target
-	        return [_action, _target];
-	    }
-	},
 	bat: 
 	{
 		name: "Bat",
@@ -260,8 +218,8 @@ global.enemies =
 		preBattleDialogue: [],
         midBattleDialogue: [],
         deathDialogue: [],
-		xpValue : 420,
-		moneyDrop: 320,
+		xpValue : 620,
+		moneyDrop: 820,
 		sound: snd_ExtraBossTheme,
 		nextEnemy: noone,
 		drops: [
@@ -281,8 +239,49 @@ global.enemies =
 			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
 			return [_action, _target];
 		}
-	}
-	,
+	},
+	golem: 
+	{
+		name: "Golem",
+		hp: 22100,
+		hpMax: 22100,
+		mp: 0,
+		mpMax: 0,
+		strength: 700,
+		magic: 2,
+		sprites: { idle: sGolem, attack: sGolemAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Water","True damage","Wind"],
+		resistances: ["Fire"],
+		absorbs: [" "],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 800,
+		moneyDrop: 900,
+		sound: snd_ExtraBossTheme,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 30 },  // 30% chance to drop an ether
+		],
+		 AIscript : function()
+        {
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
+	    }
+	},
 	Lynxara: 
 	{
 		name: "Lynxara",
@@ -300,8 +299,8 @@ global.enemies =
 		preBattleDialogue: [],
         midBattleDialogue: [],
         deathDialogue: [],
-		xpValue : 560,
-		moneyDrop: 420,
+		xpValue : 660,
+		moneyDrop: 820,
 		sound: snd_ExtraBossTheme,
 		nextEnemy: noone,
 		drops: [
@@ -341,7 +340,7 @@ global.enemies =
         midBattleDialogue: [],
         deathDialogue: [],
 		xpValue : 630,
-		moneyDrop: 390,
+		moneyDrop: 990,
 		sound: snd_ExtraBossTheme,
 		nextEnemy: noone,
 		drops: [
@@ -380,14 +379,14 @@ global.enemies =
         midBattleDialogue: [],
         deathDialogue: [],
 		xpValue : 1500,
-		moneyDrop: 1020,
+		moneyDrop: 1820,
 		sound: snd_ExtraBossTheme,
 		nextEnemy: noone,
 		drops: [
-			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 30 },  // 30% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 30},
-			{ item: global.actionLibrary.Remedy, chance: 30}
+			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100 },  // 30% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
+			{ item: global.actionLibrary.Remedy, chance: 100}
 		],
 		AIscript : function()
 		{
@@ -426,8 +425,8 @@ global.enemies =
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
 			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 30},
-			{ item: global.actionLibrary.Remedy, chance: 30}
+			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.Remedy, chance: 50}
 		],
 		AIscript : function()
 		{
@@ -466,8 +465,8 @@ global.enemies =
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
 			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 30},
-			{ item: global.actionLibrary.Remedy, chance: 30}
+			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.Remedy, chance: 50}
 		],
 		AIscript : function()
 		{
