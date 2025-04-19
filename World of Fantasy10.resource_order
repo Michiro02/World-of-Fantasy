@@ -269,6 +269,7 @@
     {"name":"snd_Opening","order":7,"path":"sounds/snd_Opening/snd_Opening.yy",},
     {"name":"snd_Overworld","order":8,"path":"sounds/snd_Overworld/snd_Overworld.yy",},
     {"name":"snd_Paralyze","order":42,"path":"sounds/snd_Paralyze/snd_Paralyze.yy",},
+    {"name":"snd_Phase1","order":5,"path":"sounds/snd_Phase1/snd_Phase1.yy",},
     {"name":"snd_Phase2","order":1,"path":"sounds/snd_Phase2/snd_Phase2.yy",},
     {"name":"snd_Phase3","order":2,"path":"sounds/snd_Phase3/snd_Phase3.yy",},
     {"name":"snd_Phase4","order":3,"path":"sounds/snd_Phase4/snd_Phase4.yy",},

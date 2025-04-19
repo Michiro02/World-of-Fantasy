@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":327.60162,
+  "duration":327.5639,
   "name":"snd_Cerberus",
   "parent":{
     "name":"BGM",
