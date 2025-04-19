@@ -7,4 +7,3 @@ global.nextMapSound = snd_Forest;
 audio_stop_all()
 audio_play_sound(snd_Forest,1,true);
 
-//welcome
