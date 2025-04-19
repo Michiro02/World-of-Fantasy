@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_Phase2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":734.14526,
+  "name":"snd_Phase2",
+  "parent":{
+    "name":"WarringTriad",
+    "path":"folders/Sounds/BGM/WarringTriad.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Phase2.MP3",
+  "type":0,
+  "volume":1.0,
+}

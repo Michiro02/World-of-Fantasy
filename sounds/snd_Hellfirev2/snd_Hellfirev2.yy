@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_Hellfirev2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":3.709375,
+  "name":"snd_Hellfirev2",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/Sounds/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Hellfirev2.MP3",
+  "type":1,
+  "volume":1.0,
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_Wind",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.043175,
+  "name":"snd_Wind",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/Sounds/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Wind.wav",
+  "type":1,
+  "volume":0.8,
+}

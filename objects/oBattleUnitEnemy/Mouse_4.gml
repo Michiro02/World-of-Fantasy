@@ -1,0 +1,1 @@
+//BattleChangeHP(id, irandom_range(-100,-1000))

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_Bahamut",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.18,
+  "name":"snd_Bahamut",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/Sounds/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Bahamut.wav",
+  "type":1,
+  "volume":1.0,
+}

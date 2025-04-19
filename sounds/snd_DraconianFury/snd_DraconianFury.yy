@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_DraconianFury",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.952,
+  "name":"snd_DraconianFury",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/Sounds/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_DraconianFury.mp3",
+  "type":1,
+  "volume":1.0,
+}

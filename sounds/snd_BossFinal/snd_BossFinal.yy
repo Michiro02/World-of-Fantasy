@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_BossFinal",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":167.25333,
+  "name":"snd_BossFinal",
+  "parent":{
+    "name":"BGM",
+    "path":"folders/Sounds/BGM.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_BossFinal.WAV",
+  "type":1,
+  "volume":0.85,
+}

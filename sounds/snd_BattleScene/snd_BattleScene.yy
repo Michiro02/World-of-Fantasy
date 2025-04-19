@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_BattleScene",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":96.26122,
+  "name":"snd_BattleScene",
+  "parent":{
+    "name":"BGM",
+    "path":"folders/Sounds/BGM.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_BattleScene.mp3",
+  "type":1,
+  "volume":1.0,
+}

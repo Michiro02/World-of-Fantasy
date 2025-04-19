@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_IronGiant",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":416.17123,
+  "name":"snd_IronGiant",
+  "parent":{
+    "name":"BGM",
+    "path":"folders/Sounds/BGM.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_IronGiant.mp3",
+  "type":1,
+  "volume":1.0,
+}

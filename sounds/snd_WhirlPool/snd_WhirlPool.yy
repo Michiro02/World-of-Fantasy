@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_WhirlPool",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":3.076979,
+  "name":"snd_WhirlPool",
+  "parent":{
+    "name":"Sound Effect",
+    "path":"folders/Sounds/Sound Effect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_WhirlPool.wav",
+  "type":1,
+  "volume":1.0,
+}
