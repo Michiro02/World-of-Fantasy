@@ -235,6 +235,7 @@
     {"name":"snd_FinBossPhase2","order":12,"path":"sounds/snd_FinBossPhase2/snd_FinBossPhase2.yy",},
     {"name":"snd_Fira","order":9,"path":"sounds/snd_Fira/snd_Fira.yy",},
     {"name":"snd_Firaga","order":10,"path":"sounds/snd_Firaga/snd_Firaga.yy",},
+    {"name":"snd_Fireball","order":58,"path":"sounds/snd_Fireball/snd_Fireball.yy",},
     {"name":"snd_FireVortex","order":32,"path":"sounds/snd_FireVortex/snd_FireVortex.yy",},
     {"name":"snd_Forest","order":5,"path":"sounds/snd_Forest/snd_Forest.yy",},
     {"name":"snd_FourFiends","order":32,"path":"sounds/snd_FourFiends/snd_FourFiends.yy",},

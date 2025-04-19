@@ -54,7 +54,7 @@ global.party =
         paralyzeTurns: 0,        
         sprites: { idle: sAndreiIdle, idle2: sAndreiIdle2, attack: sAndreiAttack, cast: sAndreiCast, down: sAndreiDead },
         actions: [global.actionLibrary.attack, 
-                  global.actionLibrary.fire, 
+                  global.actionLibrary.fire,
                   global.actionLibrary.cure, 
                   global.actionLibrary.escape]
     },

@@ -43,6 +43,7 @@ global.actionLibrary =
 		effectSprite: sFireBall,
 		effectSpriteNoTarget: sAttackFireVortex,
 		effectOnTarget: MODE.ALWAYS,
+		effectSound: snd_Fireball,
 		func : function(_user, _targets)
 		{
 			for (var i = 0; i < array_length(_targets); i++)

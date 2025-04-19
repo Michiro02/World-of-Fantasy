@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_Fire",
+  "%Name":"snd_Fireball",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.4769841,
-  "name":"snd_Fire",
+  "duration":2.0880046,
+  "name":"snd_Fireball",
   "parent":{
     "name":"Sound Effect",
     "path":"folders/Sounds/Sound Effect.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_Fire.mp3",
-  "type":1,
+  "soundFile":"snd_Fireball.mp3",
+  "type":0,
   "volume":1.0,
 }

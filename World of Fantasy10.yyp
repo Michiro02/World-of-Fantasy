@@ -288,6 +288,7 @@
     {"id":{"name":"snd_Fira","path":"sounds/snd_Fira/snd_Fira.yy",},},
     {"id":{"name":"snd_Firaga","path":"sounds/snd_Firaga/snd_Firaga.yy",},},
     {"id":{"name":"snd_Fire","path":"sounds/snd_Fire/snd_Fire.yy",},},
+    {"id":{"name":"snd_Fireball","path":"sounds/snd_Fireball/snd_Fireball.yy",},},
     {"id":{"name":"snd_FireVortex","path":"sounds/snd_FireVortex/snd_FireVortex.yy",},},
     {"id":{"name":"snd_Forest","path":"sounds/snd_Forest/snd_Forest.yy",},},
     {"id":{"name":"snd_FourFiends","path":"sounds/snd_FourFiends/snd_FourFiends.yy",},},

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.4555,
+  "duration":2.4555101,
   "name":"snd_HeartlessAngel",
   "parent":{
     "name":"Sound Effect",

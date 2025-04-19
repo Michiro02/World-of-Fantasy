@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":276.53226,
+  "duration":0.0,
   "name":"Sound86",
   "parent":{
     "name":"Sounds",
