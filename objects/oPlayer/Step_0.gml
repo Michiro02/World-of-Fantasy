@@ -11,7 +11,7 @@ if (encounter_timer >= encounter_threshold) {
     encounter_timer = 0;
     encounter_threshold = irandom_range(180, 300);
 
-    var room_name = string(room_get_name(roasdaom));
+    var room_name = string(room_get_name(room));
     var data = variable_struct_get(global.encounter_data, room_name);
 
     if (data != undefined) {

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":276.97632,
+  "duration":276.9444,
   "name":"snd_Forest",
   "parent":{
     "name":"BGM",

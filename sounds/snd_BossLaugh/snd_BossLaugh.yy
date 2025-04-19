@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.153469,
+  "duration":4.1241045,
   "name":"snd_BossLaugh",
   "parent":{
     "name":"Sounds",
