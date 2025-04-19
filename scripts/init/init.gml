@@ -8,7 +8,7 @@ global.newDialogue = false;
 
 
 global.enemyInitialSetup = false;
-global.volume = 1; // Full volume initially
+global.volume = 0.5; // Full volume initially
 audio_master_gain(global.volume); // Set initial volume
 
 // Initialize UI state

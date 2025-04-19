@@ -138,6 +138,11 @@ character.mpMax = character.baseMpMax + (character.equippedWeapon != undefined ?
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
 					array_push(global.lastLearnedSkills, character.name + " learned Assess");
                 }
+				if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.FireBall)) {
+                    character.actions[array_length(character.actions)] = global.actionLibrary.FireBall;
+                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Fire Ball!";
+					array_push(global.lastLearnedSkills, character.name + " learned Fire Ball");
+                }
                 if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.firaga)) {
                     character.actions[array_length(character.actions)] = global.actionLibrary.firaga;
                     levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Firaga!";

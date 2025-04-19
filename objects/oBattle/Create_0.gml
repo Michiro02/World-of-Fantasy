@@ -216,6 +216,15 @@ function BattleStateSelectAction()
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals heavy damage";
 					        break;
+							
+						 case "Fire Ball":
+					        var _minBase = 900;
+					        var _maxBase = 1100;
+					        var _minDamage = _minBase + ceil(_unit.magic * 0.8);
+					        var _maxDamage = _maxBase + ceil(_unit.magic * 0.8);
+					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
+							_info = "\nDeals fire damage";
+					        break;	
 
 					    case "Dragon Fury":
 					        _minBase = 900;
@@ -229,8 +238,8 @@ function BattleStateSelectAction()
 						case "Jump":
 					        _minBase = 50;
 					        _maxBase = 750;
-					        _minDamage = _minBase + ceil(_unit.strength * 0.8);
-					        _maxDamage = _maxBase + ceil(_unit.strength * 0.8);
+					        _minDamage = _minBase + ceil(_unit.strength * 0.4);
+					        _maxDamage = _maxBase + ceil(_unit.strength * 0.4);
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals heavy damage";
 					        break;

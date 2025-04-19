@@ -3,8 +3,8 @@ function EncounterData(){
 global.encounter_data = {
     "Field": {
         enemies: [
-           	[global.enemies.slimeG,global.enemies.slimeG,global.enemies.bat],
 			[global.enemies.slimeG,global.enemies.slimeG],
+			[global.enemies.slimeG,global.enemies.slimeG,global.enemies.bat],
 			[global.enemies.slimeG,global.enemies.bat,global.enemies.bat,global.enemies.bat,global.enemies.bat],
 			[global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG],
 			[global.enemies.slimeG,global.enemies.bat],
@@ -30,7 +30,8 @@ global.encounter_data = {
             [global.enemies.Tuskbreaker, global.enemies.Blazefang],
 			[global.enemies.centipede, global.enemies.centipede],
 			[global.enemies.Blazefang, global.enemies.tonberry],
-			[global.enemies.Tuskbreaker, global.enemies.Lynxara]
+			// [global.enemies.Tuskbreaker, global.enemies.Lynxara],
+			[global.enemies.golem,global.enemies.golem]
         ],
         background: sBgNewDesert
 		},

@@ -30,6 +30,55 @@ global.actionLibrary =
 		}		
 	}
 	,
+	FireBall:
+	{
+		name: "Fire Ball",
+		description : "{0} casts Fire Ball!",
+		subMenu : "Magic",
+		mpCost : 250,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.VARIES,
+		userAnimation : "cast",
+		effectSprite: sFireBall,
+		effectSpriteNoTarget: sAttackFireVortex,
+		effectOnTarget: MODE.ALWAYS,
+		func : function(_user, _targets)
+		{
+			for (var i = 0; i < array_length(_targets); i++)
+			{
+				 
+            var _damage = irandom_range(900, 1100);
+
+            // Add scaling based on magic stat
+            var magicScale = _user.magic * 0.4;  // Adjust scaling factor as needed
+            _damage += magicScale;
+				// Check if the target has a weakness to fire
+            if (array_contains(_targets[i].weaknesses, "Fire"))
+            {
+                _damage = ceil(_damage * 2.5); 
+            }
+			
+			// Check if the target has resistance to fire
+            if (array_contains(_targets[i].resistances, "Fire"))
+            {
+                _damage = ceil(_damage * 0.5); // Reduce damage 
+            }
+			 // Check if the target absorbs fire (healing instead of damage)
+            if (array_contains(_targets[i].absorbs, "Fire"))
+            {
+                var _heal = ceil(_damage); 
+                BattleChangeHP(_targets[i], _heal,0,"Fire"); 
+                
+              
+                continue; 
+            }
+				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+				BattleChangeHP(_targets[i], -_damage,0,"Fire");
+			}
+			BattleChangeMP(_user, -mpCost)
+		}		
+	},
 	attackSlash :
 	{
 		name : "Attack",

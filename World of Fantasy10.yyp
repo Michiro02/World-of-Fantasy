@@ -89,7 +89,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.13.0.190",
   },
   "name":"World of Fantasy10",
   "resources":[
@@ -497,11 +497,14 @@
     {"id":{"name":"sFinBossAttack","path":"sprites/sFinBossAttack/sFinBossAttack.yy",},},
     {"id":{"name":"sFinBossPhase1","path":"sprites/sFinBossPhase1/sFinBossPhase1.yy",},},
     {"id":{"name":"sFinBossPhase1Attack","path":"sprites/sFinBossPhase1Attack/sFinBossPhase1Attack.yy",},},
+    {"id":{"name":"sFireBall","path":"sprites/sFireBall/sFireBall.yy",},},
     {"id":{"name":"sFlameSword","path":"sprites/sFlameSword/sFlameSword.yy",},},
     {"id":{"name":"sGatoris","path":"sprites/sGatoris/sGatoris.yy",},},
     {"id":{"name":"sGatorisAttack","path":"sprites/sGatorisAttack/sGatorisAttack.yy",},},
     {"id":{"name":"sGilgamesh","path":"sprites/sGilgamesh/sGilgamesh.yy",},},
     {"id":{"name":"sGilgameshAttack","path":"sprites/sGilgameshAttack/sGilgameshAttack.yy",},},
+    {"id":{"name":"sGolem","path":"sprites/sGolem/sGolem.yy",},},
+    {"id":{"name":"sGolemAttack","path":"sprites/sGolemAttack/sGolemAttack.yy",},},
     {"id":{"name":"sHanAttack","path":"sprites/sHanAttack/sHanAttack.yy",},},
     {"id":{"name":"sHanDown","path":"sprites/sHanDown/sHanDown.yy",},},
     {"id":{"name":"sHanIdle","path":"sprites/sHanIdle/sHanIdle.yy",},},
