@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":700.60406,
+  "duration":41.68127,
   "name":"snd_Phase1",
   "parent":{
     "name":"WarringTriad",

@@ -2,7 +2,7 @@
 
 if (room != previous_room) {
     encounter_timer = 0; // Reset counter when changing rooms
-    encounter_threshold = irandom_range(180, 300); // New random threshold
+    encounter_threshold = irandom_range(120, 180); // New random threshold
     previous_room = room; // Update tracking
 }
 

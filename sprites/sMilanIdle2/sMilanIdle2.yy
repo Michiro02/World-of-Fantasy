@@ -105,8 +105,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Milan",
+    "path":"texturegroups/Milan",
   },
   "type":0,
   "VTile":false,

@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Sprites/Enemy.yy",
+    "name":"Desert Enemy",
+    "path":"folders/Sprites/Enemy/Desert Enemy.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -107,8 +107,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"EnemySprite",
+    "path":"texturegroups/EnemySprite",
   },
   "type":0,
   "VTile":false,
