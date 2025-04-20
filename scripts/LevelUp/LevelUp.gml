@@ -243,6 +243,7 @@ function level_up(character) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.DarkArrow;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Dark Arrow!";
 						array_push(global.lastLearnedSkills, character.name + " learned Dark Arrow");
+					}
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.IceArrow)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.IceArrow;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice Arrow!";
@@ -327,4 +328,3 @@ function level_up(character) {
 	    }
 	    show_debug_message("Finished awarding XP to party");
 	}
-}

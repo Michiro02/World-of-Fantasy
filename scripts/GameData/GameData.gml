@@ -1720,12 +1720,12 @@ Assess3:
 	{
 		name : "Ice Arrow",
 		description : "{0} casts Ice Arrow!",
-		subMenu : "Magic",
-		mpCost : 350,
+		subMenu : "Skill",
+		mpCost : 250,
 		targetRequired: true,
 		targetEnemyByDefault: true, //0: party/self, 1: enemy
 		targetAll: MODE.VARIES,
-		userAnimation : "cast",
+		userAnimation : "attack",
 		effectSprite: sIceArrow,
 		effectOnTarget: MODE.ALWAYS,
 		effectSound: snd_IceArrow,
@@ -1964,8 +1964,8 @@ Assess3:
 	{
 		name : "Wind Cutter",
 		description : "{0} casts Wind Cutter",
-		subMenu : "Magic",
-		mpCost : 100,
+		subMenu : "Black Magic",
+		mpCost : 200,
 		targetRequired: true,
 		targetEnemyByDefault: true, //0: party/self, 1: enemy
 		targetAll: MODE.VARIES,

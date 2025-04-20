@@ -210,7 +210,7 @@ global.enemies =
 		mpMax: 0,
 		strength: 415,
 		magic: 2,
-		sprites: { idle: sBlazefang, attack: sBlazefang},
+		sprites: { idle: sBlazefang, attack: sBlazefangAttack},
 		actions: [global.actionLibrary.attack],
 		weaknesses: ["Ice","Dark","Water", "True damage"],
 		resistances: [ ],

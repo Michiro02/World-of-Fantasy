@@ -373,7 +373,6 @@
     {"name":"sBatAttack","order":1,"path":"sprites/sBatAttack/sBatAttack.yy",},
     {"name":"sBehemoth","order":2,"path":"sprites/sBehemoth/sBehemoth.yy",},
     {"name":"sBehemothAttack","order":3,"path":"sprites/sBehemothAttack/sBehemothAttack.yy",},
-    {"name":"sBehemothAttack132","order":1,"path":"sprites/sBehemothAttack132/sBehemothAttack132.yy",},
     {"name":"sBg","order":1,"path":"sprites/sBg/sBg.yy",},
     {"name":"sBgBossFinal","order":5,"path":"sprites/sBgBossFinal/sBgBossFinal.yy",},
     {"name":"sBgDesert","order":3,"path":"sprites/sBgDesert/sBgDesert.yy",},
