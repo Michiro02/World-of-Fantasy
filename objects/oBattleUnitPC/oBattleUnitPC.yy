@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerRun",
-    "path":"sprites/sPlayerRun/sPlayerRun.yy",
+    "name":"sMilanRun",
+    "path":"sprites/sMilanRun/sMilanRun.yy",
   },
   "spriteMaskId":null,
   "visible":true,

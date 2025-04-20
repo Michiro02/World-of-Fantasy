@@ -2064,10 +2064,11 @@ Assess3:
 		subMenu : "Summon",
 		mpCost : 320,
 		targetRequired: true,
-		targetEnemyByDefault: true, //0: party/self, 1: enemy
-		targetAll: MODE.NEVER,
+		targetEnemyByDefault: true, //0 or false: party/self, 1 or true: enemy
+		targetAll: MODE.ALWAYS,
 		userAnimation : "cast",
 		effectSprite: sAttackShiva,
+		showSingleEffectSprite: true,
 		effectSound: snd_Shiva,
 		effectOnTarget: MODE.ALWAYS,
 		func : function(_user, _targets)
