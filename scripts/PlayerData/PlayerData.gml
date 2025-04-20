@@ -111,7 +111,7 @@ global.party =
         paralyzed: false,        
         paralyzeTurns: 0,         
         sprites: { idle: sKennethIdle, idle2: sKennethIdle2, attack: sKennethAttack, cast: sKennethCast, down: sKennethDown },
-        actions: [global.actionLibrary.attack, 
+        actions: [global.actionLibrary.attack,
                   global.actionLibrary.shiva, 
                   global.actionLibrary.ifrit, 
                   global.actionLibrary.escape]

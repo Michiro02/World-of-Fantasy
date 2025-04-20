@@ -1214,6 +1214,7 @@ escape :
 		description : "{0} casts Fireball!",
 		subMenu : "Magic",
 		mpCost : 160,
+		mpCost : 160,
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.VARIES,
@@ -1715,6 +1716,55 @@ Assess3:
 			BattleChangeMP(_user, -mpCost)
 		}		
 	},
+	IceArrow : 
+	{
+		name : "Ice Arrow",
+		description : "{0} casts Ice Arrow!",
+		subMenu : "Magic",
+		mpCost : 350,
+		targetRequired: true,
+		targetEnemyByDefault: true, //0: party/self, 1: enemy
+		targetAll: MODE.VARIES,
+		userAnimation : "cast",
+		effectSprite: sIceArrow,
+		effectOnTarget: MODE.ALWAYS,
+		effectSound: snd_IceArrow,
+		func : function(_user, _targets)
+		{
+			for (var i = 0; i < array_length(_targets); i++)
+			{
+			 var _damage = irandom_range(350, 600);
+
+            // Add scaling based on magic stat
+            var magicScale = _user.magic * 0.8;  // Adjust scaling factor as needed
+            _damage += magicScale;
+				 // Check if the target has a weakness to ice
+            if (array_contains(_targets[i].weaknesses, "Ice"))
+            {
+                _damage = ceil(_damage * 2.5); // Increase damage
+            }
+			
+			// Check if the target has resistance to ice
+                if (array_contains(_targets[i].resistances, "Ice"))
+                {
+                    _damage = ceil(_damage * 0.5); // Reduce damage 
+                }
+				
+				 // Check if the target absorbs ice (healing instead of damage)
+	            if (array_contains(_targets[i].absorbs, "Ice"))
+	            {
+	                var _heal = ceil(_damage); // Heal for the same amount of damage
+	                BattleChangeHP(_targets[i], _heal,0,"Ice"); // Heal the enemy
+                
+	                // Skip applying damage text for healing
+	                continue; // Skip the rest of the loop to prevent showing the damage text
+	            }
+				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+				BattleChangeHP(_targets[i], -_damage,0,"Ice");
+			}
+			BattleChangeMP(_user, -mpCost)
+		}		
+	},
 	meteor :
 	{
 		name : "Meteor",
@@ -1909,6 +1959,54 @@ Assess3:
 			}
 			BattleChangeMP(_user, -mpCost)
 		}		
+	},
+	WindCutter :
+	{
+		name : "Wind Cutter",
+		description : "{0} casts Wind Cutter",
+		subMenu : "Magic",
+		mpCost : 100,
+		targetRequired: true,
+		targetEnemyByDefault: true, //0: party/self, 1: enemy
+		targetAll: MODE.VARIES,
+		userAnimation : "cast",
+		effectSprite: sWindCutter,
+		effectOnTarget: MODE.ALWAYS,
+		effectSound: snd_SephSlash,
+		func : function(_user, _targets)
+		{
+			for (var i = 0; i < array_length(_targets); i++)
+			{
+			 var _damage = irandom_range(500, 600);
+
+            // Add scaling based on magic stat
+            var magicScale = _user.magic * 1.0;  // Adjust scaling factor as needed
+            _damage += magicScale;
+				// Check if the target has a weakness to wind
+            if (array_contains(_targets[i].weaknesses, "Wind"))
+            {
+                _damage = ceil(_damage * 2.5); 
+            }
+			
+			// Check if the target has resistance to wind
+            if (array_contains(_targets[i].resistances, "Wind"))
+            {
+                _damage = ceil(_damage * 0.5); // Reduce damage 
+            }
+			 // Check if the target absorbs wind (healing instead of damage)
+            if (array_contains(_targets[i].absorbs, "Wind"))
+            {
+                var _heal = ceil(_damage); 
+                BattleChangeHP(_targets[i], _heal,0,"Wind"); 
+                
+              
+                continue; 
+            }
+				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+				BattleChangeHP(_targets[i], -_damage,0,"Wind");
+			}
+			BattleChangeMP(_user, -mpCost)
+		}			
 	},
 	MysticFlare :
 	{

@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_Ice3",
+  "%Name":"snd_IceArrow",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.1278231,
-  "name":"snd_Ice3",
+  "duration":2.470204,
+  "name":"snd_IceArrow",
   "parent":{
     "name":"Sound Effect",
     "path":"folders/Sounds/Sound Effect.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_Ice3.mp3",
+  "soundFile":"snd_IceArrow.mp3",
   "type":1,
   "volume":1.0,
 }
