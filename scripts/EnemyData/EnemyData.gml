@@ -1879,7 +1879,7 @@ global.enemies =
 	absorbs: [" "],
     sprites: { idle: sGilgamesh, attack: sGilgameshAttack, cast: sGilgameshAttack },
     actions: [global.actionLibrary.attack, global.actionLibrary.EnemySmash],
-	preBattleDialogue: ["Gilgamesh: MWAHAHAHAHA"],
+	preBattleDialogue: [],
     midBattleDialogue: [],
     deathDialogue: [],
     xpValue: 2220,
