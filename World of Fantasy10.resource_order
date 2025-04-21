@@ -292,7 +292,6 @@
     {"name":"snd_WhirlPool","order":27,"path":"sounds/snd_WhirlPool/snd_WhirlPool.yy",},
     {"name":"snd_Win","order":11,"path":"sounds/snd_Win/snd_Win.yy",},
     {"name":"snd_Wind","order":37,"path":"sounds/snd_Wind/snd_Wind.yy",},
-    {"name":"Sound86","order":15,"path":"sounds/Sound86/Sound86.yy",},
     {"name":"AndreiRun","order":2,"path":"sprites/AndreiRun/AndreiRun.yy",},
     {"name":"backgroundimage","order":63,"path":"sprites/backgroundimage/backgroundimage.yy",},
     {"name":"BlackChocobo","order":11,"path":"sprites/BlackChocobo/BlackChocobo.yy",},
