@@ -3,6 +3,7 @@ function EnemyData(){
 //Enemy Data
 global.enemies =
 {
+	//field enemy
 	goblin: 
 	{
 		name: "Goblin",
@@ -20,8 +21,8 @@ global.enemies =
 		preBattleDialogue: [],
         midBattleDialogue: [],
         deathDialogue: [],
-		xpValue : 40,
-		moneyDrop: 30,
+		xpValue : 90,
+		moneyDrop: 130,
 		sound: undefined,
 		nextEnemy: noone,
 		drops: [
@@ -62,8 +63,8 @@ global.enemies =
 		preBattleDialogue: [],
         midBattleDialogue: [],
         deathDialogue: [],
-		xpValue : 80,
-		moneyDrop: 45,
+		xpValue : 120,
+		moneyDrop: 95,
 		sound: undefined,
 		nextEnemy: noone,
 		drops: [
@@ -82,6 +83,7 @@ global.enemies =
 			return [_action, _target];
 		}
 	},
+	//forest enemy
 	mush: 
 	{
 		name: "Mushroom",
@@ -99,7 +101,7 @@ global.enemies =
 	preBattleDialogue: [],
     midBattleDialogue: [],
     deathDialogue: [],
-    xpValue: 120,
+    xpValue: 140,
 	moneyDrop: 152,
 	sound: undefined,
 	nextEnemy: noone,
@@ -204,8 +206,8 @@ global.enemies =
 	Mammon: 
 	{
 		name: "Mammon",
-		hp: 15000,
-		hpMax: 15000,
+		hp: 12000,
+		hpMax: 12000,
 		mp: 0,
 		mpMax: 0,
 		strength: 515,
@@ -243,8 +245,8 @@ global.enemies =
 	Mandrake: 
 	{
 		name: "Mandrake",
-		hp: 15000,
-		hpMax: 15000,
+		hp: 12000,
+		hpMax: 12000,
 		mp: 0,
 		mpMax: 0,
 		strength: 615,
@@ -279,6 +281,171 @@ global.enemies =
 		}
 	}
 	,
+	behemoth: 
+	{
+		name: "Behemoth",
+    hp: 20000,
+    hpMax: 20000,
+    mp: 0,
+    mpMax: 0,
+    strength: 360,
+	magic: 400,
+	weaknesses: ["Ice","Heavy damage", "True damage","Dark"],
+	resistances: ["Fire","Electric"],
+	absorbs: [" "],
+    sprites: { idle: sBehemoth, attack: sBehemothAttack, cast: sBehemothAttack },
+    actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.BossAblaze, 
+	global.actionLibrary.Enemyfire, global.actionLibrary.Enemyice],
+	preBattleDialogue: [],
+    midBattleDialogue: [],
+    deathDialogue: [],
+    xpValue: 1520,
+	moneyDrop: 502,
+	sound: snd_ExtraBossTheme,
+	nextEnemy: noone,
+	drops: [
+			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100 },  // 30% chance to drop an ether
+			{ item: global.actionLibrary.elixir, chance: 40 },
+			{ item: global.actionLibrary.revive, chance: 40 },
+		],
+    AIscript: function() {
+        // Randomly select an action from the available actions
+        var _action = actions[irandom(array_length(actions) - 1)];
+        
+        // Filter the party members to find those who are still alive
+        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+            return (_unit.hp > 0);
+        });
+
+        // Select a random target from the filtered list of living party members
+        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+        // Return the chosen action and the target
+        return [_action, _target];
+		}
+	},
+	//desert enemy
+	centipede: 
+	{
+		name: "Centipede",
+    hp: 2345,
+    hpMax: 2345,
+    mp: 0,
+    mpMax: 0,
+    strength: 135,
+	magic: 60,
+	weaknesses: ["True damage","Dark","Water","Heavy damage"],
+	resistances: ["Fire"],
+	absorbs: [" "],
+    sprites: { idle: sCentipede, attack: sCentipedeAttack },
+    actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.Enemyice, 
+			  global.actionLibrary.Enemyfire],
+	preBattleDialogue: [],
+    midBattleDialogue: [],
+    deathDialogue: [],		  
+    xpValue: 283,
+	moneyDrop: 155,
+	sound: undefined,
+	nextEnemy: noone,
+	drops: [
+			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 30 }  // 30% chance to drop an ether
+		],
+    AIscript: function() {
+        // Randomly select an action from the available actions
+        var _action = actions[irandom(array_length(actions) - 1)];
+        
+        // Filter the party members to find those who are still alive
+        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+            return (_unit.hp > 0);
+        });
+
+        // Select a random target from the filtered list of living party members
+        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+        // Return the chosen action and the target
+        return [_action, _target];
+		}
+	},
+	Lamia: 
+	{
+		name: "Lamia",
+		hp: 15000,
+		hpMax: 15000,
+		mp: 0,
+		mpMax: 0,
+		strength: 715,
+		magic: 200,
+		sprites: { idle: sLamia, attack: sLamiaAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Heavy damage", "Dark","Water", "True damage"],
+		resistances: ["Ice"],
+		absorbs: [],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 620,
+		moneyDrop: 820,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 30},
+			{ item: global.actionLibrary.Remedy, chance: 30}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	},
+	Doublizard: 
+	{
+		name: "Doublizard",
+		hp: 15000,
+		hpMax: 15000,
+		mp: 0,
+		mpMax: 0,
+		strength: 715,
+		magic: 200,
+		sprites: { idle: sDoublizard, attack: sDoublizardAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Heavy damage", "True damage"],
+		resistances: ["Ice"],
+		absorbs: [],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 620,
+		moneyDrop: 820,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 30},
+			{ item: global.actionLibrary.Remedy, chance: 30}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	},
 	Blazefang: 
 	{
 		name: "Blazefang",
@@ -1935,94 +2102,7 @@ global.enemies =
 
         return [_action, _targets];
     }
-},
-	centipede: 
-	{
-		name: "Centipede",
-    hp: 2345,
-    hpMax: 2345,
-    mp: 0,
-    mpMax: 0,
-    strength: 135,
-	magic: 60,
-	weaknesses: ["True damage","Dark","Water","Heavy damage"],
-	resistances: ["Fire"],
-	absorbs: [" "],
-    sprites: { idle: sCentipede, attack: sCentipedeAttack },
-    actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.Enemyice, 
-			  global.actionLibrary.Enemyfire],
-	preBattleDialogue: [],
-    midBattleDialogue: [],
-    deathDialogue: [],		  
-    xpValue: 283,
-	moneyDrop: 155,
-	sound: undefined,
-	nextEnemy: noone,
-	drops: [
-			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 30 }  // 30% chance to drop an ether
-		],
-    AIscript: function() {
-        // Randomly select an action from the available actions
-        var _action = actions[irandom(array_length(actions) - 1)];
-        
-        // Filter the party members to find those who are still alive
-        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
-            return (_unit.hp > 0);
-        });
-
-        // Select a random target from the filtered list of living party members
-        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
-
-        // Return the chosen action and the target
-        return [_action, _target];
-		}
-	},
-	
-	behemoth: 
-	{
-		name: "Behemoth",
-    hp: 20000,
-    hpMax: 20000,
-    mp: 0,
-    mpMax: 0,
-    strength: 360,
-	magic: 400,
-	weaknesses: ["Ice","Heavy damage", "True damage","Dark"],
-	resistances: ["Fire","Electric"],
-	absorbs: [" "],
-    sprites: { idle: sBehemoth, attack: sBehemothAttack, cast: sBehemothAttack },
-    actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.BossAblaze, 
-	global.actionLibrary.Enemyfire, global.actionLibrary.Enemyice],
-	preBattleDialogue: [],
-    midBattleDialogue: [],
-    deathDialogue: [],
-    xpValue: 1520,
-	moneyDrop: 502,
-	sound: snd_ExtraBossTheme,
-	nextEnemy: noone,
-	drops: [
-			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 100 },  // 30% chance to drop an ether
-			{ item: global.actionLibrary.elixir, chance: 40 },
-			{ item: global.actionLibrary.revive, chance: 40 },
-		],
-    AIscript: function() {
-        // Randomly select an action from the available actions
-        var _action = actions[irandom(array_length(actions) - 1)];
-        
-        // Filter the party members to find those who are still alive
-        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
-            return (_unit.hp > 0);
-        });
-
-        // Select a random target from the filtered list of living party members
-        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
-
-        // Return the chosen action and the target
-        return [_action, _target];
-		}
-	},
+},	
 	gilgamesh: 
 	{
 		name: "Gilgamesh",
