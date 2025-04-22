@@ -1267,6 +1267,7 @@ function BattleStateEnding() {
                 // Stop battle music
                 audio_stop_sound(snd_BattleScene);
                 audio_stop_sound(snd_ExtraBossTheme);
+				audio_stop_sound(snd_ExtraBossTheme2);
                 audio_stop_sound(snd_Boss);
                 audio_stop_sound(snd_FinBossPhase2);
                 audio_stop_sound(snd_FinBossPhase1);
@@ -1277,6 +1278,7 @@ function BattleStateEnding() {
                 audio_stop_sound(snd_IronGiant);
                 audio_stop_sound(snd_Cerberus);
                 audio_stop_sound(snd_FourFiends);
+				
 
                 instance_destroy(); // End the battle instance
             }

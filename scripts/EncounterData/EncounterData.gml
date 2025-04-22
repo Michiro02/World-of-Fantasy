@@ -3,22 +3,22 @@ function EncounterData(){
 global.encounter_data = {
     "Field": {
         enemies: [
-			[global.enemies.slimeG,global.enemies.slimeG],
-			[global.enemies.slimeG,global.enemies.slimeG,global.enemies.bat],
-			[global.enemies.slimeG,global.enemies.bat,global.enemies.bat,global.enemies.bat,global.enemies.bat],
-			[global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG,global.enemies.slimeG],
-			[global.enemies.slimeG,global.enemies.bat],
-			[global.enemies.slimeG,global.enemies.slimeG, global.enemies.slimeG, global.enemies.bat],
+			[global.enemies.goblin,global.enemies.goblin],
+			[global.enemies.goblin,global.enemies.goblin,global.enemies.karnak],
+			[global.enemies.goblin,global.enemies.karnak,global.enemies.karnak],
+			[global.enemies.goblin,global.enemies.goblin,global.enemies.goblin,global.enemies.karnak],
+			[global.enemies.goblin,global.enemies.karnak],
+			[global.enemies.goblin,global.enemies.goblin, global.enemies.goblin],
         ],
         background: sBgField
     },
     "Mushroom_Forest": {
         enemies: [
-            [global.enemies.mush, global.enemies.mush, global.enemies.bat],
-            [global.enemies.mush, global.enemies.mush, global.enemies.mush, global.enemies.mush],
-            [global.enemies.Gatoris, global.enemies.mush],
+            [global.enemies.mush, global.enemies.mush, global.enemies.karnak],
+            [global.enemies.Mammon, global.enemies.mush, global.enemies.mush],
+            [global.enemies.Gatoris, global.enemies.Mandrake],
 			[global.enemies.Gatoris, global.enemies.Skyhawk],
-			[global.enemies.behemoth, global.enemies.behemoth, global.enemies.mush],
+			[global.enemies.behemoth, global.enemies.behemoth, global.enemies.Mandrake],
 			[global.enemies.behemoth, global.enemies.behemoth, global.enemies.behemoth]
         ],
         background: sBgMush

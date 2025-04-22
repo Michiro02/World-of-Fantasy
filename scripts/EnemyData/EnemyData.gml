@@ -3,16 +3,16 @@ function EnemyData(){
 //Enemy Data
 global.enemies =
 {
-	slimeG: 
+	goblin: 
 	{
-		name: "Slime",
-		hp: 900,
-		hpMax: 900,
+		name: "Goblin",
+		hp: 1900,
+		hpMax: 1900,
 		mp: 0,
 		mpMax: 0,
 		strength: 115,
 		magic: 2,
-		sprites: { idle: sSlime, attack: sSlimeAttack},
+		sprites: { idle: sGoblin, attack: sGoblinAttack},
 		actions: [global.actionLibrary.attack],
 		weaknesses: ["Fire","True damage","Dark"],
 		resistances: [" "],
@@ -45,11 +45,11 @@ global.enemies =
 	        return [_action, _target];
 	    }
 	},
-	bat: 
+	karnak: 
 	{
-		name: "Bat",
-		hp: 1015,
-		hpMax: 1015,
+		name: "Karnak",
+		hp: 2015,
+		hpMax: 2015,
 		mp: 0,
 		mpMax: 0,
 		strength: 114,
@@ -57,7 +57,7 @@ global.enemies =
 		weaknesses: ["Electric", "True damage"],
 		resistances: ["Ice"],
 		absorbs: [" "],
-		sprites: { idle: sBat, attack: sBatAttack},
+		sprites: { idle: sKarnak, attack: sKarnakAttack},
 		actions: [global.actionLibrary.attack],
 		preBattleDialogue: [],
         midBattleDialogue: [],
@@ -85,8 +85,8 @@ global.enemies =
 	mush: 
 	{
 		name: "Mushroom",
-    hp: 1130,
-    hpMax: 1130,
+    hp: 2130,
+    hpMax: 2130,
     mp: 0,
     mpMax: 0,
     strength: 120,
@@ -171,9 +171,87 @@ global.enemies =
 		mpMax: 0,
 		strength: 415,
 		magic: 2,
-		sprites: { idle: sSkyhawk, attack: sSkyhawk},
+		sprites: { idle: sSkyhawk, attack: sSkyhawkAttack},
 		actions: [global.actionLibrary.attack],
 		weaknesses: ["Fire","Dark","Heavy damage", "Wind", "True damage"],
+		resistances: ["Water"],
+		absorbs: [ ],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 360,
+		moneyDrop: 320,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 30}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	Mammon: 
+	{
+		name: "Mammon",
+		hp: 15000,
+		hpMax: 15000,
+		mp: 0,
+		mpMax: 0,
+		strength: 515,
+		magic: 2,
+		sprites: { idle: sMammon, attack: sMammonAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Dark","Heavy damage", "Water", "True damage"],
+		resistances: [],
+		absorbs: ["Fire"],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 360,
+		moneyDrop: 320,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 30}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	Mandrake: 
+	{
+		name: "Mandrake",
+		hp: 15000,
+		hpMax: 15000,
+		mp: 0,
+		mpMax: 0,
+		strength: 615,
+		magic: 2,
+		sprites: { idle: sMandrake, attack: sMandrakeAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Fire","Dark","Heavy damage", "True damage"],
 		resistances: ["Water"],
 		absorbs: [ ],
 		preBattleDialogue: [],
@@ -385,6 +463,86 @@ global.enemies =
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
 			{ item: global.actionLibrary.ether, chance: 100 },  // 30% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
+			{ item: global.actionLibrary.Remedy, chance: 100}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	TerraDrake: 
+	{
+		name: "Terra Drake",
+		hp: 50000,
+		hpMax: 50000,
+		mp: 0,
+		mpMax: 0,
+		strength: 715,
+		magic: 500,
+		sprites: { idle: sTerraDrake, attack: sTerraDrakeAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["True damage","Dark","Electric"],
+		resistances: ["Ice", "Water", "Heavy damage"],
+		absorbs: [ ],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 1560,
+		moneyDrop: 1020,
+		sound: snd_ExtraBossTheme2,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100},  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
+			{ item: global.actionLibrary.Remedy, chance: 100}
+		],
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	SandCrawler: 
+	{
+		name: "Sandcrawler",
+		hp: 50000,
+		hpMax: 50000,
+		mp: 0,
+		mpMax: 0,
+		strength: 715,
+		magic: 500,
+		sprites: { idle: sSandCrawler, attack: sSandCrawlerAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["True damage","Dark","Wind","Water"],
+		resistances: ["Ice", "Heavy damage"],
+		absorbs: [ ],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 1560,
+		moneyDrop: 1020,
+		sound: snd_ExtraBossTheme2,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100},  // 50% chance to drop an ether
 			{ item: global.actionLibrary.revive, chance: 100},
 			{ item: global.actionLibrary.Remedy, chance: 100}
 		],
@@ -1790,7 +1948,7 @@ global.enemies =
 	weaknesses: ["True damage","Dark","Water","Heavy damage"],
 	resistances: ["Fire"],
 	absorbs: [" "],
-    sprites: { idle: sCentipede, attack: sCentipede },
+    sprites: { idle: sCentipede, attack: sCentipedeAttack },
     actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.Enemyice, 
 			  global.actionLibrary.Enemyfire],
 	preBattleDialogue: [],
@@ -1919,7 +2077,7 @@ global.enemies =
 	weaknesses: ["Ice","True damage","Dark"],
 	resistances: ["Fire","Wind","Water"],
 	absorbs: [" "],
-    sprites: { idle: sRokor, attack: sRokor, cast: sRokor },
+    sprites: { idle: sRokor, attack: sRokorAttack, cast: sRokorAttack },
     actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.BossAblaze,
 			  global.actionLibrary.BossMagma],
 	preBattleDialogue: [],
