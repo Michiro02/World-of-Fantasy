@@ -576,7 +576,7 @@ global.enemies =
 		mpMax: 0,
 		strength: 415,
 		magic: 2,
-		sprites: { idle: sTuskBreaker, attack: sTuskBreaker},
+		sprites: { idle: sTuskBreaker, attack: sTuskBreakerAttack},
 		actions: [global.actionLibrary.attack],
 		weaknesses: ["Fire","Dark","Electric", "True damage"],
 		resistances: ["Heavy damage", "Water"],
