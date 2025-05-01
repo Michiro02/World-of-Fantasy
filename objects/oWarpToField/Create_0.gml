@@ -18,6 +18,7 @@ dialogue_sequence = [
 	{ speaker: "npc", text: "How to Play\n\n Use ESC to pause the game." },
 	{ speaker: "npc", text: "In Battle\n\n Use arrow keys or WASD for selecting.\n Use Shift to target all." },
 	{ speaker: "npc", text: "In Battle\n\n Use ESC to cancel your action or\n selection." },
-	{ speaker: "npc", text: "Good luck, and we hope that you \nsave Eldoria." },
+	{ speaker: "npc", text: "Encounters\n\nWhile walking, battle may start at random.\nThe more you move, the higher the chance."},
+	{ speaker: "npc", text: "Good luck, adventurer. We're\ncounting on you to save Eldoria." },
 
 ];

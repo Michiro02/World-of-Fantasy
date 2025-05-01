@@ -371,8 +371,8 @@ global.enemies =
 	Lamia: 
 	{
 		name: "Lamia",
-		hp: 15000,
-		hpMax: 15000,
+		hp: 20000,
+		hpMax: 20000,
 		mp: 0,
 		mpMax: 0,
 		strength: 715,
@@ -397,21 +397,26 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
 	},
 	Doublizard: 
 	{
 		name: "Doublizard",
-		hp: 15000,
-		hpMax: 15000,
+		hp: 25000,
+		hpMax: 25000,
 		mp: 0,
 		mpMax: 0,
 		strength: 715,
@@ -436,14 +441,19 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
 	},
 	Blazefang: 
@@ -465,7 +475,7 @@ global.enemies =
         deathDialogue: [],
 		xpValue : 620,
 		moneyDrop: 820,
-		sound: snd_ExtraBossTheme,
+		sound: undefined,
 		nextEnemy: noone,
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
@@ -475,14 +485,19 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
 	},
 	golem: 
@@ -504,7 +519,7 @@ global.enemies =
         deathDialogue: [],
 		xpValue : 800,
 		moneyDrop: 900,
-		sound: snd_ExtraBossTheme,
+		sound: undefined,
 		nextEnemy: noone,
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 30 }, // 50% chance to drop a potion
@@ -546,7 +561,7 @@ global.enemies =
         deathDialogue: [],
 		xpValue : 660,
 		moneyDrop: 820,
-		sound: snd_ExtraBossTheme,
+		sound: undefined,
 		nextEnemy: noone,
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
@@ -556,17 +571,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	Tuskbreaker: 
 	{
 		name: "Tusk",
@@ -586,7 +605,7 @@ global.enemies =
         deathDialogue: [],
 		xpValue : 630,
 		moneyDrop: 990,
-		sound: snd_ExtraBossTheme,
+		sound: undefined,
 		nextEnemy: noone,
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
@@ -595,22 +614,26 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	tonberry: 
 	{
 		name: "Tonberry",
-		hp: 30000,
-		hpMax: 30000,
+		hp: 35000,
+		hpMax: 35000,
 		mp: 0,
 		mpMax: 0,
 		strength: 115,
@@ -625,7 +648,7 @@ global.enemies =
         deathDialogue: [],
 		xpValue : 1500,
 		moneyDrop: 1820,
-		sound: snd_ExtraBossTheme,
+		sound: snd_ExtraBossTheme2,
 		nextEnemy: noone,
 		drops: [
 			{ item: global.actionLibrary.potion, chance: 100 }, // 50% chance to drop a potion
@@ -635,17 +658,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	TerraDrake: 
 	{
 		name: "Terra Drake",
@@ -675,17 +702,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	SandCrawler: 
 	{
 		name: "Sandcrawler",
@@ -715,17 +746,65 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
+	Chimera: 
+	{
+		name: "Chimera",
+		hp: 50000,
+		hpMax: 50000,
+		mp: 0,
+		mpMax: 0,
+		strength: 715,
+		magic: 500,
+		sprites: { idle: sChimera, attack: sChimeraAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["True damage","Dark","Ice"],
+		resistances: ["Water", "Heavy damage"],
+		absorbs: ["Electric"],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 1760,
+		moneyDrop: 1020,
+		sound: snd_ExtraBossTheme2,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.HighPotion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100},  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
+			{ item: global.actionLibrary.Remedy, chance: 100}
+		],
+		AIscript : function()
+		{
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
+		}
+	},
 	IronGiant: 
 	{
 		name: "Iron Giant",
@@ -755,17 +834,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	RedGiant: 
 	{
 		name: "Red Giant",
@@ -795,17 +878,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	Mimic: 
 	{
 		name: "Mimic",
@@ -833,17 +920,21 @@ global.enemies =
 		],
 		AIscript : function()
 		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
 		}
-	}
-	,
+	},
 	cerberus: 
 {
     name: "Cerberus",

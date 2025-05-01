@@ -457,6 +457,8 @@
     {"id":{"name":"sCerberusAttack","path":"sprites/sCerberusAttack/sCerberusAttack.yy",},},
     {"id":{"name":"sCharging","path":"sprites/sCharging/sCharging.yy",},},
     {"id":{"name":"sChest","path":"sprites/sChest/sChest.yy",},},
+    {"id":{"name":"sChimera","path":"sprites/sChimera/sChimera.yy",},},
+    {"id":{"name":"sChimeraAttack","path":"sprites/sChimeraAttack/sChimeraAttack.yy",},},
     {"id":{"name":"sCycloneShot","path":"sprites/sCycloneShot/sCycloneShot.yy",},},
     {"id":{"name":"sDarkArrow","path":"sprites/sDarkArrow/sDarkArrow.yy",},},
     {"id":{"name":"sDeity","path":"sprites/sDeity/sDeity.yy",},},
