@@ -14,7 +14,7 @@ npc_name = " "; // The name of the enemy/NPC
 
 // Define the dialogue sequence (you can keep or remove entries as needed)
 dialogue_sequence = [
-    { speaker: "npc", text: "Monsters!!" },
+    { speaker: "npc", text: "Monster!!" },
 	
 
 ];

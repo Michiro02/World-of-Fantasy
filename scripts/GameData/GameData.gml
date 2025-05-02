@@ -308,6 +308,55 @@ global.actionLibrary =
 			BattleChangeMP(_user, -mpCost)
 		}
 	},
+	IceArrow : 
+	{
+		name : "Ice Arrow",
+		description : "{0} casts Ice Arrow!",
+		subMenu : "Skill",
+		mpCost : 220,
+		targetRequired: true,
+		targetEnemyByDefault: true, //0: party/self, 1: enemy
+		targetAll: MODE.VARIES,
+		userAnimation : "attack",
+		effectSprite: sIceArrow2,
+		effectOnTarget: MODE.ALWAYS,
+		effectSound: snd_IceArrow,
+		func : function(_user, _targets)
+		{
+			for (var i = 0; i < array_length(_targets); i++)
+			{
+			 var _damage = irandom_range(550, 900);
+
+            // Add scaling based on magic stat
+            var strengthScale = _user.strength * 0.8;  // Adjust scaling factor as needed
+            _damage += strengthScale;
+				 // Check if the target has a weakness to ice
+            if (array_contains(_targets[i].weaknesses, "Ice"))
+            {
+                _damage = ceil(_damage * 2.5); // Increase damage
+            }
+			
+			// Check if the target has resistance to ice
+                if (array_contains(_targets[i].resistances, "Ice"))
+                {
+                    _damage = ceil(_damage * 0.5); // Reduce damage 
+                }
+				
+				 // Check if the target absorbs ice (healing instead of damage)
+	            if (array_contains(_targets[i].absorbs, "Ice"))
+	            {
+	                var _heal = ceil(_damage); // Heal for the same amount of damage
+	                BattleChangeHP(_targets[i], _heal,0,"Ice"); // Heal the enemy
+                
+	                // Skip applying damage text for healing
+	                continue; // Skip the rest of the loop to prevent showing the damage text
+	            }
+				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+				BattleChangeHP(_targets[i], -_damage,0,"Ice");
+			}
+			BattleChangeMP(_user, -mpCost)
+		}		
+	},
 	VoidPiercer : 
 	{
 		name : "Void Piercer",
@@ -1716,55 +1765,7 @@ Assess3:
 			BattleChangeMP(_user, -mpCost)
 		}		
 	},
-	IceArrow : 
-	{
-		name : "Ice Arrow",
-		description : "{0} casts Ice Arrow!",
-		subMenu : "Skill",
-		mpCost : 250,
-		targetRequired: true,
-		targetEnemyByDefault: true, //0: party/self, 1: enemy
-		targetAll: MODE.VARIES,
-		userAnimation : "attack",
-		effectSprite: sIceArrow2,
-		effectOnTarget: MODE.ALWAYS,
-		effectSound: snd_IceArrow,
-		func : function(_user, _targets)
-		{
-			for (var i = 0; i < array_length(_targets); i++)
-			{
-			 var _damage = irandom_range(350, 600);
-
-            // Add scaling based on magic stat
-            var magicScale = _user.magic * 0.8;  // Adjust scaling factor as needed
-            _damage += magicScale;
-				 // Check if the target has a weakness to ice
-            if (array_contains(_targets[i].weaknesses, "Ice"))
-            {
-                _damage = ceil(_damage * 2.5); // Increase damage
-            }
-			
-			// Check if the target has resistance to ice
-                if (array_contains(_targets[i].resistances, "Ice"))
-                {
-                    _damage = ceil(_damage * 0.5); // Reduce damage 
-                }
-				
-				 // Check if the target absorbs ice (healing instead of damage)
-	            if (array_contains(_targets[i].absorbs, "Ice"))
-	            {
-	                var _heal = ceil(_damage); // Heal for the same amount of damage
-	                BattleChangeHP(_targets[i], _heal,0,"Ice"); // Heal the enemy
-                
-	                // Skip applying damage text for healing
-	                continue; // Skip the rest of the loop to prevent showing the damage text
-	            }
-				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
-				BattleChangeHP(_targets[i], -_damage,0,"Ice");
-			}
-			BattleChangeMP(_user, -mpCost)
-		}		
-	},
+	
 	meteor :
 	{
 		name : "Meteor",
@@ -3438,7 +3439,7 @@ XPotion :
 	}
 }
 
-
+//weapon
 global.weaponLibrary = 
 {
     DeathBow: 
@@ -3502,15 +3503,26 @@ global.weaponLibrary =
         mpBonus : 9999
 	},
 	
-	EternalValor:
+	Everblade:
 	{
-		name: "Eternal Valor",
+		name: "Everblade",
 		type: "Sword",
 		description: "A sword that gives 1600 str and hp/mp 1000",
 		strengthBonus : 1600,
         magicBonus : 0,
         hpBonus : 1000,
         mpBonus : 1000
+	},
+	
+	Dusksorrow:
+	{
+		name: "Dusksorrow",
+		type: "Sword",
+		description: "A sword that gives 3600 str and hp/mp 2000",
+		strengthBonus : 3600,
+        magicBonus : 0,
+        hpBonus : 2000,
+        mpBonus : 2000
 	},
 	
 	CrimsonHunt:
@@ -3524,15 +3536,37 @@ global.weaponLibrary =
         mpBonus : 1000
 	},
 	
-	ArcaneWhispers:
+	Drakenspine:
 	{
-		name: "Arcane Whispers",
+		name: "Drakenspine",
+		type: "Spear",
+		description: "A spear that gives 3600 str and hp/mp 2000",
+		strengthBonus : 3600,
+        magicBonus : 0,
+        hpBonus : 2000,
+        mpBonus : 2000
+	},
+	
+	Whisperbane:
+	{
+		name: "Whisperbane",
 		type: "Book",
 		description: "A book that gives 1600 magic and hp/mp 1000",
 		strengthBonus : 0,
         magicBonus : 1600,
         hpBonus : 1000,
         mpBonus : 1000
+	},
+	
+	Dusktome:
+	{
+		name: "Dusktome",
+		type: "Book",
+		description: "A book that gives 3600 magic and hp/mp 2000",
+		strengthBonus : 0,
+        magicBonus : 3600,
+        hpBonus : 2000,
+        mpBonus : 2000
 	},
 	
 	WindstriderLongbow:
@@ -3546,15 +3580,37 @@ global.weaponLibrary =
         mpBonus : 1000
 	},
 	
-	CelestialDawn:
+	Sylverthorn:
 	{
-		name: "Celestial Dawn",
+		name: "Sylverthorn",
+		type: "Bow",
+		description: "A bow that gives 3600 str and hp/mp 2000",
+		strengthBonus : 3600,
+        magicBonus : 0,
+        hpBonus : 2000,
+        mpBonus : 2000
+	},
+	
+	Starseer:
+	{
+		name: "Starseer",
 		type: "Staff",
 		description: "A staff that gives 1600 magic and\nhp/mp 1000",
 		strengthBonus : 0,
         magicBonus : 1600,
         hpBonus : 1000,
         mpBonus : 1000
+	},
+	
+	Lunareth:
+	{
+		name: "Lunareth",
+		type: "Staff",
+		description: "A staff that gives 3600 magic and\nhp/mp 2000",
+		strengthBonus : 0,
+        magicBonus : 3600,
+        hpBonus : 2000,
+        mpBonus : 2000
 	},
 	
 	LongBow: 

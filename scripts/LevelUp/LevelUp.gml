@@ -211,11 +211,11 @@ function level_up(character) {
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Meteor!";
 						array_push(global.lastLearnedSkills, character.name + " learned Meteor");
 	                }
-					if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.WindCutter)) {
-	                    character.actions[array_length(character.actions)] = global.actionLibrary.WindCutter;
-	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Wind Cutter!";
-						array_push(global.lastLearnedSkills, character.name + " learned Wind Cutter");
-	                }
+				//	if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.WindCutter)) {
+	            //        character.actions[array_length(character.actions)] = global.actionLibrary.WindCutter;
+	            //        levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Wind Cutter!";
+				//		array_push(global.lastLearnedSkills, character.name + " learned Wind Cutter");
+	            //    }
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.Assess3)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.Assess3;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
@@ -250,27 +250,28 @@ function level_up(character) {
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Dark Arrow!";
 						array_push(global.lastLearnedSkills, character.name + " learned Dark Arrow");
 					}
-	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.IceArrow)) {
-	                    character.actions[array_length(character.actions)] = global.actionLibrary.IceArrow;
-	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice Arrow!";
-						array_push(global.lastLearnedSkills, character.name + " learned Ice Arrow");					
-	                }
+	                
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.Assess2)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.Assess2;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
 						array_push(global.lastLearnedSkills, character.name + " learned Assess");
 	                }
-	                if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.VoidPiercer)) {
+					if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.IceArrow)) {
+	                    character.actions[array_length(character.actions)] = global.actionLibrary.IceArrow;
+	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice Arrow!";
+						array_push(global.lastLearnedSkills, character.name + " learned Ice Arrow");					
+	                }
+	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.VoidPiercer)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.VoidPiercer;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Void Piercer!";
 						array_push(global.lastLearnedSkills, character.name + " learned Void Piercer");
 	                }
-	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.CycloneShot)) {
+	                if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.CycloneShot)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.CycloneShot;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Cyclone Shot!";
 						array_push(global.lastLearnedSkills, character.name + " learned Cyclone Shot");
 	                }
-					 if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.SpectralRain)) {
+					 if (character.level == 90 && !array_contains(character.actions, global.actionLibrary.SpectralRain)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.SpectralRain;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Spectral Rain!";
 						array_push(global.lastLearnedSkills, character.name + " learned Spectral Rain");

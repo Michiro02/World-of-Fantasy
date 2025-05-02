@@ -338,7 +338,7 @@ global.enemies =
 	weaknesses: ["True damage","Dark","Water","Heavy damage"],
 	resistances: ["Fire"],
 	absorbs: [" "],
-    sprites: { idle: sCentipede, attack: sCentipedeAttack },
+    sprites: { idle: sCentipede, attack: sCentipedeAttack, cast: sCentipedeAttack },
     actions: [global.actionLibrary.ClawSlash, global.actionLibrary.EnemySmash, global.actionLibrary.Enemyice, 
 			  global.actionLibrary.Enemyfire],
 	preBattleDialogue: [],
@@ -805,6 +805,142 @@ global.enemies =
 	        return [_action, _target];
 		}
 	},
+	
+	//Tower
+	Imp: 
+	{
+		name: "Imp",
+		hp: 30000,
+		hpMax: 30000,
+		mp: 0,
+		mpMax: 0,
+		strength: 815,
+		magic: 2,
+		sprites: { idle: sImp, attack: sImpAttack},
+		actions: [global.actionLibrary.attack],
+		weaknesses: ["Fire","Dark","Heavy damage","True damage"],
+		resistances: [],
+		absorbs: [],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 900,
+		moneyDrop: 1020,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.Remedy, chance: 50}
+		],
+		AIscript : function()
+		{
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
+		}
+	},
+	Warlock: 
+	{
+		name: "Warlock",
+		hp: 35000,
+		hpMax: 35000,
+		mp: 0,
+		mpMax: 0,
+		strength: 815,
+		magic: 500,
+		sprites: { idle: sWarlock, attack: sWarlockAttack, cast: sWarlockAttack},
+		actions: [global.actionLibrary.attack, global.actionLibrary.Enemyfire,
+				  global.actionLibrary.Enemyice],
+		weaknesses: ["Ice","Heavy damage","True damage"],
+		resistances: [],
+		absorbs: [],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 1100,
+		moneyDrop: 1020,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.Remedy, chance: 50}
+		],
+		AIscript : function()
+		{
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
+		}
+	},
+	Hexmire: 
+	{
+		name: "Hexmire",
+		hp: 35000,
+		hpMax: 35000,
+		mp: 0,
+		mpMax: 0,
+		strength: 815,
+		magic: 500,
+		sprites: { idle: sHexmire, attack: sHexmireAttack, cast: sHexmireAttack},
+		actions: [global.actionLibrary.attack, global.actionLibrary.Enemyfire,
+				  global.actionLibrary.Enemyice],
+		weaknesses: ["Ice","Heavy damage","True damage"],
+		resistances: [],
+		absorbs: [],
+		preBattleDialogue: [],
+        midBattleDialogue: [],
+        deathDialogue: [],
+		xpValue : 1200,
+		moneyDrop: 1020,
+		sound: undefined,
+		nextEnemy: noone,
+		drops: [
+			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.Remedy, chance: 50}
+		],
+		AIscript : function()
+		{
+			 // Randomly select an action from the available actions
+	        var _action = actions[irandom(array_length(actions) - 1)];
+        
+	        // Filter the party members to find those who are still alive
+	        var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index) {
+	            return (_unit.hp > 0);
+	        });
+
+	        // Select a random target from the filtered list of living party members
+	        var _target = _possibleTargets[irandom(array_length(_possibleTargets) - 1)];
+
+	        // Return the chosen action and the target
+	        return [_action, _target];
+		}
+	},
 	IronGiant: 
 	{
 		name: "Iron Giant",
@@ -827,9 +963,9 @@ global.enemies =
 		sound: snd_IronGiant,
 		nextEnemy: noone,
 		drops: [
-			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.HighPotion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.ether, chance: 100 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
 			{ item: global.actionLibrary.Remedy, chance: 50}
 		],
 		AIscript : function()
@@ -871,9 +1007,9 @@ global.enemies =
 		sound: snd_IronGiant,
 		nextEnemy: noone,
 		drops: [
-			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 50},
+			{ item: global.actionLibrary.HighPotion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.HighEther, chance: 100 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
 			{ item: global.actionLibrary.Remedy, chance: 50}
 		],
 		AIscript : function()
@@ -902,7 +1038,7 @@ global.enemies =
 		mpMax: 0,
 		strength: 415,
 		magic: 2,
-		sprites: { idle: sMimic, attack: sMimic},
+		sprites: { idle: sMimic, attack: sMimicAttack},
 		actions: [global.actionLibrary.attack],
 		weaknesses: ["Fire", "True damage", "Electric"],
 		resistances: ["Water"],
@@ -914,9 +1050,10 @@ global.enemies =
 		moneyDrop: 3090,
 		nextEnemy: noone,
 		drops: [
-			{ item: global.actionLibrary.potion, chance: 50 }, // 50% chance to drop a potion
-			{ item: global.actionLibrary.ether, chance: 50 },  // 50% chance to drop an ether
-			{ item: global.actionLibrary.revive, chance: 30}
+			{ item: global.actionLibrary.HighPotion, chance: 100 }, // 50% chance to drop a potion
+			{ item: global.actionLibrary.HighEther, chance: 100 },  // 50% chance to drop an ether
+			{ item: global.actionLibrary.revive, chance: 100},
+			{ item: global.actionLibrary.HighElixir, chance: 100},
 		],
 		AIscript : function()
 		{
@@ -1210,21 +1347,6 @@ global.enemies =
 	            return [global.actionLibrary.EnemyParalyze, [_possibleTargets[0]]];
 	        }
 	    }
-
-	    // 20% chance to cast Life Drainer on one or two random targets
-	    if (irandom(100) < 15) {
-	        if (_aliveCount >= 2) {
-	            // Randomly decide to target one or two members
-	            _possibleTargets = array_shuffle(_possibleTargets);
-	            var _targets = irandom(1) == 0 ? 
-	                [_possibleTargets[0]] : 
-	                [_possibleTargets[0], _possibleTargets[1]];
-	            return [global.actionLibrary.BossLifeDrainer, _targets];
-	        } else if (_aliveCount == 1) {
-	            // Target the single member if only one is alive
-	            return [global.actionLibrary.BossLifeDrainer, [_possibleTargets[0]]];
-	        }
-	    }
         
         // Select a random action if no other conditions are met
         var _action = actions[irandom(array_length(actions) - 1)];
@@ -1336,21 +1458,6 @@ global.enemies =
 	        } else if (_aliveCount == 1) {
 	            // Target the single member if only one is alive
 	            return [global.actionLibrary.EnemyParalyze, [_possibleTargets[0]]];
-	        }
-	    }
-
-	    // 20% chance to cast Life Drainer on one or two random targets
-	    if (irandom(100) < 15) {
-	        if (_aliveCount >= 2) {
-	            // Randomly decide to target one or two members
-	            _possibleTargets = array_shuffle(_possibleTargets);
-	            var _targets = irandom(1) == 0 ? 
-	                [_possibleTargets[0]] : 
-	                [_possibleTargets[0], _possibleTargets[1]];
-	            return [global.actionLibrary.BossLifeDrainer, _targets];
-	        } else if (_aliveCount == 1) {
-	            // Target the single member if only one is alive
-	            return [global.actionLibrary.BossLifeDrainer, [_possibleTargets[0]]];
 	        }
 	    }
         
@@ -1842,29 +1949,9 @@ global.enemies =
 	    });
 	    var _aliveCount = array_length(_possibleTargets);
 
-	    // 20% chance to cast Heartless Angel, either on two or up to four targets
-	    if (irandom(100) < 20) {
-	        if (_aliveCount >= 2) {
-	            // Randomly decide to target two or up to four members, depending on availability
-	            _possibleTargets = array_shuffle(_possibleTargets);
-	            var _targets;
-            
-	            if (_aliveCount >= 3 && irandom(1) == 0) {
-	                _targets = [_possibleTargets[0], _possibleTargets[1], _possibleTargets[2]];
-	            } else {
-	                // Target two members if fewer than four are available or random choice prefers two
-	                _targets = [_possibleTargets[0], _possibleTargets[1]];
-	            }
-            
-	            return [global.actionLibrary.HeartlessAngel, _targets];
-	        } else if (_aliveCount == 1) {
-	            // Target the single member if only one is alive
-	            return [global.actionLibrary.HeartlessAngel, [_possibleTargets[0]]];
-	        }
-	    }
 
 	    // 20% chance to cast Paralyze on one or two random targets
-	    if (irandom(100) < 15) {
+	    if (irandom(100) < 20) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target one or two members
 	            _possibleTargets = array_shuffle(_possibleTargets);
@@ -1878,7 +1965,7 @@ global.enemies =
 	        }
 	    }
 
-	    // 20% chance to cast Life Drainer on one or two random targets
+	    // 15% chance to cast Life Drainer on one or two random targets
 	    if (irandom(100) < 15) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target one or two members

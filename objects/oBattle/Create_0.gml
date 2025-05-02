@@ -251,6 +251,15 @@ function BattleStateSelectAction()
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals dark damage";
 					        break;
+							
+						case "Ice Arrow":
+							 _minBase = 550;
+					        _maxBase = 900;
+					        _minDamage = _minBase + ceil(_unit.strength * 0.8);
+					        _maxDamage = _maxBase + ceil(_unit.strength * 0.8);
+					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
+							_info = "\nDeals ice damage";
+					        break;
 						
 						case "Void Piercer":
 							 _minBase = 500;
