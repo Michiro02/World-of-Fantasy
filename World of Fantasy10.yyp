@@ -687,7 +687,6 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room20","path":"rooms/Room20/Room20.yy",},},
     {"roomId":{"name":"RoomStart","path":"rooms/RoomStart/RoomStart.yy",},},
     {"roomId":{"name":"Field","path":"rooms/Field/Field.yy",},},
     {"roomId":{"name":"Town_of_Mekzidas","path":"rooms/Town_of_Mekzidas/Town_of_Mekzidas.yy",},},
@@ -707,6 +706,7 @@
     {"roomId":{"name":"Tower","path":"rooms/Tower/Tower.yy",},},
     {"roomId":{"name":"Sequence","path":"rooms/Sequence/Sequence.yy",},},
     {"roomId":{"name":"EndSave","path":"rooms/EndSave/EndSave.yy",},},
+    {"roomId":{"name":"Room20","path":"rooms/Room20/Room20.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
