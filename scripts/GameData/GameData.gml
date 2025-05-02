@@ -1726,7 +1726,7 @@ Assess3:
 		targetEnemyByDefault: true, //0: party/self, 1: enemy
 		targetAll: MODE.VARIES,
 		userAnimation : "attack",
-		effectSprite: sIceArrow,
+		effectSprite: sIceArrow2,
 		effectOnTarget: MODE.ALWAYS,
 		effectSound: snd_IceArrow,
 		func : function(_user, _targets)

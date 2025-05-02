@@ -7,8 +7,8 @@ global.enemies =
 	goblin: 
 	{
 		name: "Goblin",
-		hp: 1900,
-		hpMax: 1900,
+		hp: 2900,
+		hpMax: 2900,
 		mp: 0,
 		mpMax: 0,
 		strength: 115,
@@ -49,8 +49,8 @@ global.enemies =
 	karnak: 
 	{
 		name: "Karnak",
-		hp: 2015,
-		hpMax: 2015,
+		hp: 3015,
+		hpMax: 3015,
 		mp: 0,
 		mpMax: 0,
 		strength: 114,
@@ -87,8 +87,8 @@ global.enemies =
 	mush: 
 	{
 		name: "Mushroom",
-    hp: 2130,
-    hpMax: 2130,
+    hp: 3130,
+    hpMax: 3130,
     mp: 0,
     mpMax: 0,
     strength: 120,
@@ -597,7 +597,7 @@ global.enemies =
 		magic: 2,
 		sprites: { idle: sTuskBreaker, attack: sTuskBreakerAttack},
 		actions: [global.actionLibrary.attack],
-		weaknesses: ["Fire","Dark","Electric", "True damage"],
+		weaknesses: ["True damage","Dark","Electric"],
 		resistances: ["Heavy damage", "Water"],
 		absorbs: [ ],
 		preBattleDialogue: [],

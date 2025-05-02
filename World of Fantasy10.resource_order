@@ -440,6 +440,7 @@
     {"name":"sHanLunge","order":2,"path":"sprites/sHanLunge/sHanLunge.yy",},
     {"name":"sHeartlessAngel","order":35,"path":"sprites/sHeartlessAngel/sHeartlessAngel.yy",},
     {"name":"sIceArrow","order":20,"path":"sprites/sIceArrow/sIceArrow.yy",},
+    {"name":"sIceArrow2","order":21,"path":"sprites/sIceArrow2/sIceArrow2.yy",},
     {"name":"sIceSword","order":8,"path":"sprites/sIceSword/sIceSword.yy",},
     {"name":"SideQuestUI_1","order":2,"path":"sprites/SideQuestUI_1/SideQuestUI_1.yy",},
     {"name":"SideQuestUI","order":1,"path":"sprites/SideQuestUI/SideQuestUI.yy",},
