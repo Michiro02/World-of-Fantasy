@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":96.26122,
+  "duration":174.61406,
   "name":"snd_BattleScene",
   "parent":{
     "name":"BGM",

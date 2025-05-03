@@ -18,11 +18,16 @@ weapons_for_sale = [
 	{ weapon: global.weaponLibrary.DeathBow, price: 1000 },
 	{ weapon: global.weaponLibrary.SageStaff, price: 1000 },
 	{ weapon: global.weaponLibrary.Arcanist, price: 1000 },
-	{ weapon: global.weaponLibrary.EternalValor, price: 2000 },
+	{ weapon: global.weaponLibrary.Everblade, price: 2000 },
 	{ weapon: global.weaponLibrary.CrimsonHunt, price: 2000 },
-	{ weapon: global.weaponLibrary.ArcaneWhispers, price: 2000 },
+	{ weapon: global.weaponLibrary.Whisperbane, price: 2000 },
 	{ weapon: global.weaponLibrary.WindstriderLongbow, price: 2000 },
-	{ weapon: global.weaponLibrary.CelestialDawn, price: 2000 }
+	{ weapon: global.weaponLibrary.Starseer, price: 2000 },
+	{ weapon: global.weaponLibrary.Dusksorrow, price: 2500 },
+	{ weapon: global.weaponLibrary.Lunareth, price: 2500 },
+	{ weapon: global.weaponLibrary.Drakenspine, price: 2500 },
+	{ weapon: global.weaponLibrary.Dusktome, price: 2500 },
+	{ weapon: global.weaponLibrary.Sylverthorn, price: 2500 }
 ];
 
 // Dialogue sequences

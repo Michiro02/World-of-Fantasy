@@ -21,5 +21,5 @@ menu_fade_alpha = 0; // Starts fully transparent
 menu_fade_in_started = false; // Track if the fade-in has started
 
 
-intro_images = [WoF_1, Logo2]; // Replace with your sprites
+intro_images = [WoF_1, Logo2]; // Intro Sprite
 current_image_index = -1; // No image displayed initially

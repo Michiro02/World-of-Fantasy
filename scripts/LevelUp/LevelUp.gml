@@ -108,16 +108,17 @@ function level_up(character) {
 	                break;
                 
 	            case "Andrei":
+					if (character.level == 62 && !array_contains(character.actions, global.actionLibrary.resurrect)) {
+	                    character.actions[array_length(character.actions)] = global.actionLibrary.resurrect;
+	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Resurrect!";
+						array_push(global.lastLearnedSkills, character.name + " learned Resurrect");
+	                }
 	                if (character.level == 65 && !array_contains(character.actions, global.actionLibrary.ice)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.ice;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice!";
 						array_push(global.lastLearnedSkills, character.name + " learned Ice");
 	                }
-	                if (character.level == 65 && !array_contains(character.actions, global.actionLibrary.resurrect)) {
-	                    character.actions[array_length(character.actions)] = global.actionLibrary.resurrect;
-	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Resurrect!";
-						array_push(global.lastLearnedSkills, character.name + " learned Resurrect");
-	                }
+	                
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.fira)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.fira;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Fira!";
@@ -144,7 +145,7 @@ function level_up(character) {
 						array_push(global.lastLearnedSkills, character.name + " learned Fireball");
 	                }
              
-	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.curaga)) {
+	                if (character.level == 82 && !array_contains(character.actions, global.actionLibrary.curaga)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.curaga;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Cure!";
 						array_push(global.lastLearnedSkills, character.name + " learned Cure");
@@ -167,7 +168,7 @@ function level_up(character) {
 	                if (character.level == 100 && !array_contains(character.actions, global.actionLibrary.HolyStrike)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.HolyStrike;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Holy Strike!";
-						array_push(global.lastLearnedSkills, character.name + " learned Holy Strike!");
+						array_push(global.lastLearnedSkills, character.name + " learned Holy Strike");
 	                }
 	                break;
                 
@@ -182,17 +183,22 @@ function level_up(character) {
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
 						array_push(global.lastLearnedSkills, character.name + " learned Assess");
 	                }
-	                if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.lunge)) {
+				    if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.Stormstrike)) {
+	                    character.actions[array_length(character.actions)] = global.actionLibrary.Stormstrike;
+	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Stormstrike!";
+						array_push(global.lastLearnedSkills, character.name + " learned Stormstrike");
+	                }	
+	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.lunge)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.lunge;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Lunge!";
 						array_push(global.lastLearnedSkills, character.name + " learned Lunge");
 	                }
-	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.TwisterLunge)) {
+	                if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.TwisterLunge)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.TwisterLunge;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Twister Lunge!";
 						array_push(global.lastLearnedSkills, character.name + " learned Twister Lunge");
 	                }
-					 if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.dragonfury)) {
+					 if (character.level == 90 && !array_contains(character.actions, global.actionLibrary.dragonfury)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.dragonfury;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Dragon Fury!";
 						array_push(global.lastLearnedSkills, character.name + " learned Dragon Fury");
@@ -205,11 +211,11 @@ function level_up(character) {
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Meteor!";
 						array_push(global.lastLearnedSkills, character.name + " learned Meteor");
 	                }
-					if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.WindCutter)) {
-	                    character.actions[array_length(character.actions)] = global.actionLibrary.WindCutter;
-	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Wind Cutter!";
-						array_push(global.lastLearnedSkills, character.name + " learned Wind Cutter");
-	                }
+				//	if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.WindCutter)) {
+	            //        character.actions[array_length(character.actions)] = global.actionLibrary.WindCutter;
+	            //        levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Wind Cutter!";
+				//		array_push(global.lastLearnedSkills, character.name + " learned Wind Cutter");
+	            //    }
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.Assess3)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.Assess3;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
@@ -244,27 +250,28 @@ function level_up(character) {
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Dark Arrow!";
 						array_push(global.lastLearnedSkills, character.name + " learned Dark Arrow");
 					}
-	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.IceArrow)) {
-	                    character.actions[array_length(character.actions)] = global.actionLibrary.IceArrow;
-	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice Arrow!";
-						array_push(global.lastLearnedSkills, character.name + " learned Ice Arrow");					
-	                }
+	                
 	                if (character.level == 70 && !array_contains(character.actions, global.actionLibrary.Assess2)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.Assess2;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Assess!";
 						array_push(global.lastLearnedSkills, character.name + " learned Assess");
 	                }
-	                if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.VoidPiercer)) {
+					if (character.level == 75 && !array_contains(character.actions, global.actionLibrary.IceArrow)) {
+	                    character.actions[array_length(character.actions)] = global.actionLibrary.IceArrow;
+	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Ice Arrow!";
+						array_push(global.lastLearnedSkills, character.name + " learned Ice Arrow");					
+	                }
+	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.VoidPiercer)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.VoidPiercer;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Void Piercer!";
 						array_push(global.lastLearnedSkills, character.name + " learned Void Piercer");
 	                }
-	                if (character.level == 80 && !array_contains(character.actions, global.actionLibrary.CycloneShot)) {
+	                if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.CycloneShot)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.CycloneShot;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Cyclone Shot!";
 						array_push(global.lastLearnedSkills, character.name + " learned Cyclone Shot");
 	                }
-					 if (character.level == 85 && !array_contains(character.actions, global.actionLibrary.SpectralRain)) {
+					 if (character.level == 90 && !array_contains(character.actions, global.actionLibrary.SpectralRain)) {
 	                    character.actions[array_length(character.actions)] = global.actionLibrary.SpectralRain;
 	                    levelUpMessages[array_length(levelUpMessages)] = character.name + " learned Spectral Rain!";
 						array_push(global.lastLearnedSkills, character.name + " learned Spectral Rain");

@@ -251,6 +251,15 @@ function BattleStateSelectAction()
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals dark damage";
 					        break;
+							
+						case "Ice Arrow":
+							 _minBase = 550;
+					        _maxBase = 900;
+					        _minDamage = _minBase + ceil(_unit.strength * 0.8);
+					        _maxDamage = _maxBase + ceil(_unit.strength * 0.8);
+					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
+							_info = "\nDeals ice damage";
+					        break;
 						
 						case "Void Piercer":
 							 _minBase = 500;
@@ -370,10 +379,10 @@ function BattleStateSelectAction()
 					        break;
 							
 						 case "Fireball":
-					        var _minBase = 600;
-					        var _maxBase = 750;
-					        var _minDamage = _minBase + ceil(_unit.magic * 0.7);
-					        var _maxDamage = _maxBase + ceil(_unit.magic * 0.7);
+					        _minBase = 600;
+					        _maxBase = 750;
+					        _minDamage = _minBase + ceil(_unit.magic * 0.7);
+					        _maxDamage = _maxBase + ceil(_unit.magic * 0.7);
 					        _damageRange = string(_minDamage) + "-" + string(_maxDamage);
 							_info = "\nDeals fire damage";
 					        break;		
@@ -1267,6 +1276,7 @@ function BattleStateEnding() {
                 // Stop battle music
                 audio_stop_sound(snd_BattleScene);
                 audio_stop_sound(snd_ExtraBossTheme);
+				audio_stop_sound(snd_ExtraBossTheme2);
                 audio_stop_sound(snd_Boss);
                 audio_stop_sound(snd_FinBossPhase2);
                 audio_stop_sound(snd_FinBossPhase1);
@@ -1277,6 +1287,7 @@ function BattleStateEnding() {
                 audio_stop_sound(snd_IronGiant);
                 audio_stop_sound(snd_Cerberus);
                 audio_stop_sound(snd_FourFiends);
+				
 
                 instance_destroy(); // End the battle instance
             }

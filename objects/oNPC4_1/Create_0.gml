@@ -46,6 +46,6 @@ if (!global.newDialogue) {
         { speaker: "npc", text: "Go, heroes. You've earned it." },
         { speaker: "npc", text: "Thank you... for everything." },
         { speaker: "player", char: 4, text: "Goodbye, Thalor." },
-        { speaker: "npc", text: "Farewell, travelers." },
+        { speaker: "npc", text: "Farewell, adventurers." },
     ];
 }

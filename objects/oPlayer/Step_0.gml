@@ -15,7 +15,8 @@ if (encounter_timer >= encounter_threshold) {
     var data = variable_struct_get(global.encounter_data, room_name);
 
     if (data != undefined) {
-        var enemyGroup = choose(data.enemies[0], data.enemies[1], data.enemies[2], data.enemies[3], data.enemies[4], data.enemies[5]);
+        var enemyGroup = choose(data.enemies[0], data.enemies[1], data.enemies[2], data.enemies[3], data.enemies[4], data.enemies[5],
+								data.enemies[6], data.enemies[7], data.enemies[8]);
         var bg = data.background;
 
         var music_to_play = snd_BattleScene;
