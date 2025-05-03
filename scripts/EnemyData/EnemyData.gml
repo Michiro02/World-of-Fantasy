@@ -1334,7 +1334,7 @@ global.enemies =
 	    }
 
 	    // 20% chance to cast Paralyze on one or two random targets
-	    if (irandom(100) < 15) {
+	    if (irandom(100) < 20) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target one or two members
 	            _possibleTargets = array_shuffle(_possibleTargets);
@@ -1426,7 +1426,7 @@ global.enemies =
 	    var _aliveCount = array_length(_possibleTargets);
 
 	    // 20% chance to cast Heartless Angel, either on two or up to four targets
-	    if (irandom(100) < 15) {
+	    if (irandom(100) < 25) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target two or up to four members, depending on availability
 	            _possibleTargets = array_shuffle(_possibleTargets);
@@ -1447,7 +1447,7 @@ global.enemies =
 	    }
 
 	    // 20% chance to cast Paralyze on one or two random targets
-	    if (irandom(100) < 15) {
+	    if (irandom(100) < 20) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target one or two members
 	            _possibleTargets = array_shuffle(_possibleTargets);

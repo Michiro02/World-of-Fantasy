@@ -3,7 +3,7 @@ audio_play_sound(snd_Ending_1,1,true);
 
 credits_text = "With the Warring Triad finally vanquished, the\nvery foundation of the world trembles-not in\nfear, but in renewal. The deities' fading power\nleaves behind a world no longer bound by the\nwhims of ancient forces.\n\nFor the first time in history, the people stand\nfree, shaping their own destiny without gods\nor war. The five adventurers, weary but proud,\nwitness the dawn of an era of true peace.\n\nThe scars of battle remain, yet they are now\nreminders of courage, sacrifice, and the hope\nthat guided them through even the darkest\nnights. The echoes of their struggle will\nresonate through history, told in songs and\nlegends for generations to come.\n\nAs they look upon the world they have saved,\na quiet understanding passes between them.\nTheir journey has ended, yet the bonds they\nforged will never fade. Wherever fate may\nlead them, they walk forward, not as warriors\nof war, but as champions of a new tomorrow.\n\nAnd at last, the world breathes in peace.\n\n" +
                "\n\nSpecial thanks to\n\n-Valerie Silverio\n" +
-			   "\n\nGame Designer\n\n-Milan Mababangloob Jr.\n" +
+			   "\n\nGame Designer\n\n-Milan Mababangloob Jr.\n-Jobelle Villanueva\n" +
                "\n\nProgrammers\n\n-Milan Mababangloob Jr.\n-Jobelle Villanueva\n" +
                "\n\nBackground Music\n\n-Milan Mababangloob Jr.\n" +
 			   "\n\nSound Effects\n\n-Jobelle Villanueva\n" +

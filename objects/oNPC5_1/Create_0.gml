@@ -23,11 +23,11 @@ weapons_for_sale = [
 	{ weapon: global.weaponLibrary.Whisperbane, price: 2000 },
 	{ weapon: global.weaponLibrary.WindstriderLongbow, price: 2000 },
 	{ weapon: global.weaponLibrary.Starseer, price: 2000 },
-	{ weapon: global.weaponLibrary.Dusksorrow, price: 2500 },
-	{ weapon: global.weaponLibrary.Lunareth, price: 2500 },
-	{ weapon: global.weaponLibrary.Drakenspine, price: 2500 },
-	{ weapon: global.weaponLibrary.Dusktome, price: 2500 },
-	{ weapon: global.weaponLibrary.Sylverthorn, price: 2500 }
+	{ weapon: global.weaponLibrary.Dusksorrow, price: 3000 },
+	{ weapon: global.weaponLibrary.Lunareth, price: 3000 },
+	{ weapon: global.weaponLibrary.Drakenspine, price: 3000 },
+	{ weapon: global.weaponLibrary.Dusktome, price: 3000 },
+	{ weapon: global.weaponLibrary.Sylverthorn, price: 3000 }
 ];
 
 // Dialogue sequences
