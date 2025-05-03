@@ -371,6 +371,38 @@ if (global.show_controls) {
 // Draw the pointer sprite at the selected menu item position
 draw_sprite(sPointer, 0, option_positions[global.selected_item][0] + 10, option_positions[global.selected_item][1] + 2);
 
+if (global.menu_state == "confirm_quit") {
+    // Draw the confirmation box
+    var view_x = camera_get_view_x(view_camera[0]);
+    var view_y = camera_get_view_y(view_camera[0]);
+    var viewport_width = 420;
+    var viewport_height = 250;
+    var box_width = 260;
+    var box_height = 100;
+    var box_x = view_x + (viewport_width - box_width) / 2;
+    var box_y = view_y + (viewport_height - box_height) / 2;
+
+    draw_sprite_stretched(Save, 0, box_x - 30, box_y, box_width, box_height);
+    
+    // Draw the confirmation text
+    draw_set_color(c_white);
+    draw_text(box_x - 20, box_y + 20, "  Do you want to quit the game?");
+    
+    // Draw the "Yes" and "No" options
+    var yes_text_x = box_x + 40;
+    var no_text_x = box_x + 140;
+    var text_y = box_y + 60;
+
+    draw_set_color(global.selected_confirmation == 1 ? c_yellow : c_white);
+    draw_text(yes_text_x, text_y, "Yes");
+
+    draw_set_color(global.selected_confirmation == 0 ? c_yellow : c_white);
+    draw_text(no_text_x, text_y, "No");
+
+    // Draw the pointer
+    var pointer_x = global.selected_confirmation == 1 ? yes_text_x - 20 : no_text_x - 20;
+    draw_sprite(sPointer, 0, pointer_x + 20, text_y + 5);
+}
 
 if (global.menu_state == "confirm_save" || global.menu_state == "confirm_load") {
     // Get the view's position (assuming using view[0])

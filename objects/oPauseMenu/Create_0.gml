@@ -37,3 +37,5 @@ if (!variable_global_exists("selected_weapon_index")) {
 if (!variable_global_exists("selected_party_member_index")) {
     global.selected_party_member_index = 0; // Default selected party member index
 }
+
+just_entered_confirmation = false;

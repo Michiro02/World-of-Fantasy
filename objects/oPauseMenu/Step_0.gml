@@ -62,11 +62,15 @@ if (!global.dialogue_active) {
                     global.menu_state = "equip_weapon";
                     break;
                 case 6:
-                    game_end();
+                   // game_end();
+					global.selected_confirmation = 1;
+					global.menu_state = "confirm_quit";
+					just_entered_confirmation = true;
                     break;
             }
         }
     }
+	
 
     // Inventory navigation
     else if (global.menu_state == "inventory") {
@@ -366,6 +370,42 @@ if (weapon_text != "") {
         } else {
             // Ensure the game is paused
             global.game_paused = true;
+        }
+    }
+}
+
+// Handle confirmation dialogs
+if (global.menu_state == "confirm_quit") {
+    // Clear the "just entered" flag
+    if (just_entered_confirmation) {
+        just_entered_confirmation = false;
+    } 
+    else {
+        // Left/Right: Toggle Yes/No
+        if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left)) {
+            global.selected_confirmation = 1; // Yes
+            audio_play_sound(snd_Menu, 1, false);
+        }
+        if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right)) {
+            global.selected_confirmation = 0; // No
+            audio_play_sound(snd_Menu, 1, false);
+        }
+        
+        // Enter: Confirm selection
+        if (keyboard_check_pressed(vk_enter)) {
+            audio_play_sound(snd_Menu, 1, false);
+            if (global.selected_confirmation == 1) {
+                game_end();
+            } else {
+                global.menu_state = "main";
+				
+            }
+		}
+        
+        // ESC: Only cancel confirmation (don't close pause menu)
+        if (keyboard_check_pressed(vk_escape)) {
+            audio_play_sound(snd_Menu, 1, false);
+            global.menu_state = "main"; // Just return to pause menu            
         }
     }
 }

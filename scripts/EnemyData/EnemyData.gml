@@ -1135,8 +1135,8 @@ global.enemies =
 	demon: 
 {
     name: "Deity III",
-    hp: 500000,
-    hpMax: 500000,
+    hp: 300000,
+    hpMax: 300000,
     mp: 0,
     mpMax: 0,
     strength: 950,
@@ -1205,8 +1205,8 @@ global.enemies =
 	fiend: 
 {
     name: "Deity II",
-    hp: 600000,
-    hpMax: 600000,
+    hp: 500000,
+    hpMax: 500000,
     mp: 0,
     mpMax: 0,
     strength: 950,
@@ -1269,8 +1269,8 @@ global.enemies =
 	goddess: 
 {
     name: "Deity I",
-    hp: 700000,
-    hpMax: 700000,
+    hp: 600000,
+    hpMax: 600000,
     mp: 0,
     mpMax: 0,
     strength: 950,
@@ -1378,8 +1378,8 @@ global.enemies =
 	kefka: 
 {
     name: "Exarch",
-    hp: 900000,
-    hpMax: 900000,
+    hp: 700000,
+    hpMax: 700000,
     mp: 0,
     mpMax: 0,
     strength: 950,
@@ -1897,8 +1897,8 @@ global.enemies =
     giga3: 
 	{
 		name: "Gigatoa",
-    hp: 700000,
-    hpMax: 700000,
+    hp: 500000,
+    hpMax: 500000,
     mp: 0,
     mpMax: 0,
     strength: 1050,
