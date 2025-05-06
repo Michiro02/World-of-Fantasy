@@ -1135,8 +1135,8 @@ global.enemies =
 	demon: 
 {
     name: "Deity III",
-    hp: 300000,
-    hpMax: 300000,
+    hp: 400000,
+    hpMax: 400000,
     mp: 0,
     mpMax: 0,
     strength: 950,
@@ -1397,9 +1397,6 @@ global.enemies =
 			  global.actionLibrary.RagnarokStrike,
 			  global.actionLibrary.JudgmentRay,
 			  global.actionLibrary.EternalFrost,
-			  global.actionLibrary.BossVortexAll,
-			  global.actionLibrary.BossAblazeAll,
-			  global.actionLibrary.BossMagmaAll
 			  ],
 	preBattleDialogue: ["Milan: Oh no, the Exarch awakens.", "Hannah: I suspect this will happen.", "Kenneth: But since the Exarch has awakened..", 
 	                    "Kenneth: we can now finish this.", "Jobelle: That's right.", "Jobelle: So that everyone will be saved.", "Andrei: But we need to be careful here..",
@@ -1426,7 +1423,7 @@ global.enemies =
 	    var _aliveCount = array_length(_possibleTargets);
 
 	    // 20% chance to cast Heartless Angel, either on two or up to four targets
-	    if (irandom(100) < 25) {
+	    if (irandom(100) < 20) {
 	        if (_aliveCount >= 2) {
 	            // Randomly decide to target two or up to four members, depending on availability
 	            _possibleTargets = array_shuffle(_possibleTargets);
@@ -1470,10 +1467,7 @@ global.enemies =
             _action == global.actionLibrary.RagnarokStrike ||
             _action == global.actionLibrary.DivineThunder || 
             _action == global.actionLibrary.JudgmentRay ||
-			_action == global.actionLibrary.EclipseSurgeAll ||
-			_action == global.actionLibrary.BossMagmaAll ||
-			_action == global.actionLibrary.BossAblazeAll ||
-			_action == global.actionLibrary.BossVortexAll)
+			_action == global.actionLibrary.EclipseSurgeAll)
         {
             _targets = array_filter(oBattle.partyUnits, function(_unit, _index) {
                 return (_unit.hp > 0);

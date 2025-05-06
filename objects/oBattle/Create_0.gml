@@ -905,6 +905,7 @@ function BattleStateVictoryCheck()
 
                 // Set up transition data
                 transitionActive = true;
+				battleText = "";
                 transitionTimer = 0;
                 transitionEnemy = _enemy;
                 transitionNewEnemy = instance_create_depth(_enemy.x, _enemy.y - 150, _enemy.depth, oBattleUnitEnemy, _newEnemy); // Initialize new enemy above the battlefield
